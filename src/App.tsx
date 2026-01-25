@@ -1,5 +1,4 @@
 import { Header } from "@/sections/Header";
-import { FigmaPromo } from "@/components/FigmaPromo";
 import { Hero } from "@/sections/Hero";
 import { Features } from "@/sections/Features";
 import { Benefits } from "@/sections/Benefits";
@@ -18,7 +17,6 @@ export const App = () => {
       <div className="box-border caret-transparent">
         <div className="relative content-center items-center bg-neutral-100 box-border caret-transparent gap-x-0 flex flex-col h-min justify-start min-h-[1000px] gap-y-0 overflow-hidden">
           <Header />
-          <FigmaPromo />
           <div className="relative content-center items-center bg-neutral-100 box-border caret-transparent gap-x-0 contents flex-col h-min justify-start min-h-[1000px] gap-y-0 overflow-hidden md:h-[1000px]">
             <div className="relative box-border caret-transparent shrink-0">
               <div className="box-border caret-transparent"></div>
