@@ -368,3 +368,211 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+@layer utilities {
+  @keyframes hero-float {
+    0% {
+      transform: translate3d(0, -0.75rem, 0);
+    }
+    12.5% {
+      transform: translate3d(0, -0.53rem, 0);
+    }
+    25% {
+      transform: translate3d(0, 0, 0);
+    }
+    37.5% {
+      transform: translate3d(0, 0.53rem, 0);
+    }
+    50% {
+      transform: translate3d(0, 0.75rem, 0);
+    }
+    62.5% {
+      transform: translate3d(0, 0.53rem, 0);
+    }
+    75% {
+      transform: translate3d(0, 0, 0);
+    }
+    87.5% {
+      transform: translate3d(0, -0.53rem, 0);
+    }
+    100% {
+      transform: translate3d(0, -0.75rem, 0);
+    }
+  }
+
+  @keyframes hero-float-ellipse {
+    0% {
+      transform: translate3d(0, -0.75rem, 0);
+    }
+    12.5% {
+      transform: translate3d(0.44rem, -0.53rem, 0);
+    }
+    25% {
+      transform: translate3d(0.625rem, 0, 0);
+    }
+    37.5% {
+      transform: translate3d(0.44rem, 0.53rem, 0);
+    }
+    50% {
+      transform: translate3d(0, 0.75rem, 0);
+    }
+    62.5% {
+      transform: translate3d(-0.44rem, 0.53rem, 0);
+    }
+    75% {
+      transform: translate3d(-0.625rem, 0, 0);
+    }
+    87.5% {
+      transform: translate3d(-0.44rem, -0.53rem, 0);
+    }
+    100% {
+      transform: translate3d(0, -0.75rem, 0);
+    }
+  }
+
+  .hero-float {
+    animation: hero-float 7s linear infinite;
+    will-change: transform;
+  }
+
+  .hero-float-ellipse {
+    animation: hero-float-ellipse 9s linear infinite;
+    will-change: transform;
+  }
+
+  .hero-float-slow {
+    animation-duration: 11s;
+  }
+
+  .hero-float-delay-1 {
+    animation-delay: -1.5s;
+  }
+
+  .hero-float-delay-2 {
+    animation-delay: -3s;
+  }
+
+  .hero-float-delay-3 {
+    animation-delay: -4.5s;
+  }
+
+  .hero-float-delay-4 {
+    animation-delay: -6s;
+  }
+
+  @keyframes letter-float {
+    0% {
+      transform: translate3d(-0.4rem, -0.35rem, 0) rotate(-5deg);
+    }
+    50% {
+      transform: translate3d(0.4rem, 0.35rem, 0) rotate(5deg);
+    }
+    100% {
+      transform: translate3d(-0.4rem, -0.35rem, 0) rotate(-5deg);
+    }
+  }
+
+  .letter-float {
+    animation: letter-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .letter-float-delay-1 {
+    animation-delay: -1.8s;
+  }
+
+  .letter-float-delay-2 {
+    animation-delay: -3.6s;
+  }
+
+  @keyframes price-slide-in {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes price-slide-out {
+    0% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes price-slide-in-down {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes price-slide-out-down {
+    0% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  .price-flip-stack {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 1em;
+  }
+
+  .price-flip-placeholder {
+    visibility: hidden;
+  }
+
+  .price-flip-in,
+  .price-flip-out {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .price-flip-in {
+    animation: price-slide-in 0.45s ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .price-flip-out {
+    animation: price-slide-out 0.45s ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  .price-flip-in-down {
+    animation: price-slide-in-down 0.45s ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .price-flip-out-down {
+    animation: price-slide-out-down 0.45s ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-float,
+    .hero-float-ellipse {
+      animation: none;
+      transform: none;
+    }
+  }
+}
+

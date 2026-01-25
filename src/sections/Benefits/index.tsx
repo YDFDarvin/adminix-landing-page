@@ -3,7 +3,10 @@ import { BenefitGrid } from "@/sections/Benefits/components/BenefitGrid";
 
 export const Benefits = () => {
   return (
-    <section className="relative content-center items-center box-border caret-transparent gap-x-0 flex flex-col shrink-0 h-min justify-center gap-y-0 w-full overflow-hidden py-[60px] md:py-[100px]">
+    <section
+      id="benefits"
+      className="relative content-center items-center box-border caret-transparent gap-x-0 flex flex-col shrink-0 h-min justify-center gap-y-0 w-full overflow-hidden py-[60px] md:py-[100px]"
+    >
       <div className="relative content-center items-center box-border caret-transparent gap-x-10 flex flex-col shrink-0 h-min justify-start max-w-[390px] gap-y-10 w-full px-4 md:gap-x-14 md:max-w-[1200px] md:gap-y-14 md:px-12">
         <div className="box-border caret-transparent contents">
           <div className="relative box-border caret-transparent shrink-0 w-full">
@@ -33,7 +36,7 @@ export const Benefits = () => {
                     </div>
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                        Keep your analytics safe with advanced security and
+                        Keep your anAdminix safe with advanced security and
                         strong encryption.
                       </p>
                     </div>
@@ -95,3 +98,4 @@ export const Benefits = () => {
     </section>
   );
 };
+

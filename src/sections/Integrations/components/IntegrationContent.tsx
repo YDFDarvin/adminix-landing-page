@@ -22,7 +22,7 @@ export const IntegrationContent = () => {
           <div className="box-border caret-transparent contents">
             <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[450px] w-full">
               <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-left font-geist">
-                Connect Alytics with your favorite tools to streamline workflows
+                Connect Adminix with your favorite tools to streamline workflows
                 and keep everything running smoothly.
               </p>
             </div>
@@ -30,9 +30,9 @@ export const IntegrationContent = () => {
         </div>
       </div>
       <div className="relative box-border caret-transparent shrink-0">
-        <a
-          href="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
-          className="relative text-blue-700 content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-min overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif"
+        <button
+          disabled
+          className="relative text-blue-700 disabled:opacity-50 content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-min overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif"
         >
           <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex blur-0 shrink-0 h-min justify-center gap-y-2.5 w-min">
             <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
@@ -41,8 +41,9 @@ export const IntegrationContent = () => {
               </p>
             </div>
           </div>
-        </a>
+        </button>
       </div>
     </div>
   );
 };
+

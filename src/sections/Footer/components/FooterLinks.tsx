@@ -7,6 +7,22 @@ export type FooterLinksProps = {
 };
 
 export const FooterLinks = (props: FooterLinksProps) => {
+  const handleLinkClick =
+    (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+      const hashIndex = href.indexOf("#");
+      if (hashIndex === -1) {
+        return;
+      }
+
+      const targetId = href.slice(hashIndex + 1);
+      if (!targetId) {
+        return;
+      }
+
+      event.preventDefault();
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
   return (
     <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex basis-0 flex-col grow shrink-0 h-min justify-start gap-y-4 w-px overflow-hidden">
       <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full">
@@ -24,6 +40,7 @@ export const FooterLinks = (props: FooterLinksProps) => {
               <a
                 href={link.href}
                 className="box-border caret-transparent text-nowrap"
+                onClick={handleLinkClick(link.href)}
               >
                 {link.text}
               </a>

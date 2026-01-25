@@ -1,10 +1,14 @@
+import type { ReactNode } from "react";
+
 export type PricingCardProps = {
   planName: string;
-  price: string;
+  price: ReactNode;
   description: string;
   features: string[];
   buttonUrl: string;
   variant?: string;
+  priceSuffix?: string;
+  buttonLabel?: string;
 };
 
 export const PricingCard = (props: PricingCardProps) => {
@@ -31,11 +35,13 @@ export const PricingCard = (props: PricingCardProps) => {
                 </div>
               </div>
             </div>
-            <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-              <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                /month
-              </p>
-            </div>
+            {props.priceSuffix !== "" && (
+              <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
+                <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
+                  {props.priceSuffix || "/month"}
+                </p>
+              </div>
+            )}
           </div>
           <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
             <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
@@ -83,7 +89,7 @@ export const PricingCard = (props: PricingCardProps) => {
             <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex blur-0 shrink-0 h-min justify-center gap-y-2.5 w-min">
               <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
                 <p className="text-white text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
-                  Get Started
+                  {props.buttonLabel || "Get Started"}
                 </p>
               </div>
             </div>

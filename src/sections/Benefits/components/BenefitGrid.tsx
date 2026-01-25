@@ -15,7 +15,7 @@ export const BenefitGrid = () => {
         <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:grow md:w-px">
           <BenefitCard
             title="All-in-One View"
-            description="Keep all your analytics in one place, without jumping between tools."
+            description="Keep all your anAdminix in one place, without jumping between tools."
           />
         </div>
       </div>
@@ -30,3 +30,4 @@ export const BenefitGrid = () => {
     </div>
   );
 };
+

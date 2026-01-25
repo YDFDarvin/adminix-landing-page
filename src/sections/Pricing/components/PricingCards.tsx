@@ -7,16 +7,20 @@ export const PricingCards = () => {
         <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-full overflow-hidden rounded-[20px]">
           <PricingCard
             planName="Starter"
-            price="$39"
-            description="Great for small teams getting started."
+            price="$45"
+            description="Best option for personal use & for your next project"
             features={[
-              "5,000 tracked users",
-              "Core analytics",
-              "Simple dashboards",
-              "Email support",
-              "Weekly reports",
+              "1 active projects",
+              "5 active workflows",
+              "1 subflows per workflow",
+              "10k executions",
+              "1 members per project",
+              "10 entities",
+              "10k database records",
+              "1 GB of storage",
             ]}
             buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+            buttonLabel="Start free trial"
           />
         </div>
       </div>
@@ -28,38 +32,72 @@ export const PricingCards = () => {
             </p>
           </div>
           <PricingCard
-            planName="Growth"
+            planName="Advanced"
             price="$99"
-            description="For fast-growing teams who are scaling."
+            description="Best for startups, SMBs and fast growing projects"
             features={[
-              "Everything in starter",
-              "50,000 tracked users",
-              "Funnel & drop-off analysis",
-              "Custom dashboards",
-              "Team collaboration tools",
+              "300 AI assistant requests",
+              "5 active projects",
+              "Unlimited active workflows",
+              "10 subflows per workflow",
+              "100k executions",
+              "5 members per project",
+              "20 entities",
+              "50k database records",
+              "10 GB of storage",
             ]}
             buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
             variant="bg-white rounded-[18px]"
+            buttonLabel="Start free trial"
           />
         </div>
       </div>
       <div className="relative box-border caret-transparent basis-0 grow shrink-0 w-px">
         <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-full overflow-hidden rounded-[20px]">
           <PricingCard
-            planName="Premium"
-            price="$299"
-            description="Great for enterprizes to convert more."
+            planName="Pro"
+            price="$599"
+            description="Perfect for scaling businesses and complex projects"
             features={[
-              "All Growth features",
-              "Unlimited tracked users",
-              "Dedicated account manager",
-              "SLA & compliance support",
-              "Advanced integrations",
+              "300 AI assistant requests",
+              "10 active projects",
+              "30 active workflows",
+              "Unlimited subflows",
+              "300k executions",
+              "10 members per project",
+              "Unlimited entities",
+              "100k database records",
+              "100 GB of storage",
             ]}
             buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+            buttonLabel="Start free trial"
+          />
+        </div>
+      </div>
+      <div className="relative box-border caret-transparent basis-0 grow shrink-0 w-px">
+        <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-full overflow-hidden rounded-[20px]">
+          <PricingCard
+            planName="Enterprise"
+            price="Custom"
+            priceSuffix=""
+            description="Perfect for secure, scalable enterprise automation"
+            features={[
+              "1000 AI assistant requests",
+              "Unlimited active projects",
+              "Unlimited active workflows",
+              "Unlimited subflows",
+              "Unlimited executions",
+              "Unlimited members",
+              "Unlimited entities",
+              "Unlimited database records",
+              "Unlimited storage",
+            ]}
+            buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+            buttonLabel="Start free trial"
           />
         </div>
       </div>
     </div>
   );
 };
+

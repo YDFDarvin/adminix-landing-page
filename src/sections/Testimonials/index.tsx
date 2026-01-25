@@ -10,7 +10,7 @@ export const Testimonials = () => {
             <SectionHeader
               label="Testimonials"
               title="Hear what others say about us"
-              description="See what top teams say after switching to a smarter product analytics platform."
+              description="See what top teams say after switching to a smarter product anAdminix platform."
             />
           </div>
         </div>
@@ -21,3 +21,4 @@ export const Testimonials = () => {
     </section>
   );
 };
+

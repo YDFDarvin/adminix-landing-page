@@ -1,26 +1,88 @@
+import { useEffect, useState } from "react";
+import { PricingCard } from "@/sections/Pricing/components/PricingCard";
+
 export const PricingToggle = () => {
+  const monthlyPrices = { starter: 45, advanced: 99, pro: 599 };
+  const yearlyPrices = {
+    starter: Math.round(monthlyPrices.starter * 0.85),
+    advanced: Math.round(monthlyPrices.advanced * 0.85),
+    pro: Math.round(monthlyPrices.pro * 0.85),
+  };
+  const [isYearly, setIsYearly] = useState(false);
+  const formatPrice = (value: number) => `$${value}`;
+  const prices = isYearly ? yearlyPrices : monthlyPrices;
+  const displayPrices = {
+    starter: formatPrice(prices.starter),
+    advanced: formatPrice(prices.advanced),
+    pro: formatPrice(prices.pro),
+  };
+  const [prevPrices, setPrevPrices] = useState(displayPrices);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const renderAnimatedPrice = (price: string, prevPrice: string, keyBase: string) => (
+    <span className="price-flip-stack">
+      <span className="price-flip-placeholder">{price}</span>
+      <span key={`${keyBase}-out-${isYearly}`} className={hasMounted ? "price-flip-out" : ""}>
+        {prevPrice}
+      </span>
+      <span key={`${keyBase}-in-${isYearly}`} className={hasMounted ? "price-flip-in" : ""}>
+        {price}
+      </span>
+    </span>
+  );
+
   return (
     <div className="relative content-center items-center box-border caret-transparent gap-x-10 flex flex-col h-min justify-center gap-y-10 w-full">
       <div className="relative box-border caret-transparent shrink-0">
         <div className="relative content-center items-center box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-min">
-          <div className="relative content-center items-center box-border caret-transparent gap-x-4 flex shrink-0 h-min justify-center gap-y-4 w-min overflow-clip">
-            <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-              <h6 className="text-lg font-medium box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist">
+          <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex shrink-0 h-min justify-center gap-y-4 w-min px-1 overflow-clip">
+            <div
+              className={`relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap transition-colors duration-300 ${
+                isYearly ? "text-zinc-400" : "text-black"
+              }`}
+            >
+              <h6 className="text-inherit text-lg font-medium box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist">
                 Monthly
               </h6>
             </div>
             <div className="relative box-border caret-transparent shrink-0">
-              <div className="relative content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-12 justify-center gap-y-2.5 w-[90px] overflow-clip rounded-[40px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[40px] after:border-separate after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif">
-                <div className="absolute bg-white box-border caret-transparent shrink-0 w-10 z-[1] overflow-clip rounded-[30px] left-1 inset-y-1"></div>
-              </div>
+              <button
+                type="button"
+                aria-pressed={isYearly}
+                onClick={() => {
+                  setPrevPrices(displayPrices);
+                  setIsYearly(!isYearly);
+                }}
+                className={`relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-12 justify-center gap-y-2.5 w-[90px] overflow-clip rounded-[40px] transition-all duration-300 ${
+                  isYearly ? "bg-blue-600" : "bg-neutral-200"
+                } after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[40px] after:border-separate after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif`}
+              >
+                <div
+                  className={`absolute bg-white box-border caret-transparent shrink-0 w-10 z-[1] overflow-clip rounded-[30px] inset-y-1 left-1 transition-transform duration-300 ${
+                    isYearly ? "translate-x-[42px]" : "translate-x-0"
+                  }`}
+                ></div>
+              </button>
             </div>
-            <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start opacity-40 text-nowrap">
-              <h6 className="text-zinc-600/80 text-lg font-medium box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist">
+            <div
+              className={`relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap transition-colors duration-300 ${
+                isYearly ? "text-black" : "text-zinc-400"
+              }`}
+            >
+              <h6 className="text-inherit text-lg font-medium box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist">
                 Yearly
               </h6>
             </div>
           </div>
-          <div className="relative content-center items-center self-stretch box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center opacity-40 gap-y-2.5">
+          <div
+            className={`relative content-center items-center self-stretch box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 transition-opacity duration-300 ${
+              isYearly ? "opacity-100" : "opacity-40"
+            }`}
+          >
             <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
               <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
                 Save
@@ -29,7 +91,7 @@ export const PricingToggle = () => {
             <div className="relative content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-clip px-2 py-1 rounded-[50px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[50px] after:border-separate after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif">
               <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
                 <p className="text-white text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                  20%
+                  15%
                 </p>
               </div>
             </div>
@@ -41,145 +103,26 @@ export const PricingToggle = () => {
           </div>
         </div>
       </div>
-      <div className="relative content-end items-end box-border caret-transparent gap-x-5 flex shrink-0 h-min justify-center gap-y-0 w-full">
-        <div className="relative box-border caret-transparent basis-0 grow shrink-0 w-px">
+      <div className="relative content-end items-end box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full md:gap-y-0 lg:flex-row">
+        <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full lg:basis-0 lg:grow lg:w-px">
           <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-full overflow-hidden rounded-[20px]">
-            <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full p-4">
-              <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full overflow-hidden">
-                <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                  <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-                    Starter
-                  </h5>
-                </div>
-                <div className="relative content-start items-start box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden">
-                  <div className="relative content-center items-center box-border caret-transparent gap-x-1 flex shrink-0 h-min justify-center gap-y-1 w-min overflow-hidden">
-                    <div className="relative box-border caret-transparent shrink-0">
-                      <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col h-min justify-center gap-y-2.5 w-min overflow-hidden">
-                        <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-min">
-                          <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                            <h2 className="text-[28px] font-semibold box-border caret-transparent tracking-[-0.84px] leading-[30.8px] capitalize text-nowrap font-geist md:text-5xl md:tracking-[-1.44px] md:leading-[52.8px]">
-                              $39
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                      <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                        /month
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
-                    <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                      Great for small teams getting started.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full">
-                <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                  <p className="text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                    What&#39;s included
-                  </p>
-                </div>
-                <div className="relative content-center items-center box-border caret-transparent gap-x-3 flex flex-col shrink-0 h-min justify-center gap-y-3 w-full">
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          5,000 tracked users
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Core analytics
-                        </p>
-                      </div>
-                    </div>
-                  </div><div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Simple dashboards
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Email support
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Weekly reports
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 <div className="relative box-border caret-transparent shrink-0 w-full">
-                  <a
-                    href="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
-                    className="relative text-blue-700 content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif"
-                  >
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex blur-0 shrink-0 h-min justify-center gap-y-2.5 w-min">
-                      <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                        <p className="text-white text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
-                          Get Started
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <PricingCard
+              planName="Starter"
+              price={renderAnimatedPrice(displayPrices.starter, prevPrices.starter, "starter")}
+              description="Best option for personal use & for your next project"
+              features={[
+                "1 active projects",
+                "5 active workflows",
+                "1 subflows per workflow",
+                "10k executions",
+                "1 members per project",
+                "10 entities",
+                "10k database records",
+                "1 GB of storage",
+              ]}
+              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+              buttonLabel="Start free trial"
+            />
           </div>
         </div>
         <div className="relative box-border caret-transparent basis-0 grow shrink-0 w-px">
@@ -189,288 +132,73 @@ export const PricingToggle = () => {
                 Most Popular
               </p>
             </div>
-            <div className="relative content-center items-center bg-white box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full p-4 rounded-[18px]">
-              <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full overflow-hidden">
-                <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                  <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-                    Growth
-                  </h5>
-                </div>
-                <div className="relative content-start items-start box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden">
-                  <div className="relative content-center items-center box-border caret-transparent gap-x-1 flex shrink-0 h-min justify-center gap-y-1 w-min overflow-hidden">
-                    <div className="relative box-border caret-transparent shrink-0">
-                      <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col h-min justify-center gap-y-2.5 w-min overflow-hidden">
-                        <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-min">
-                          <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                            <h2 className="text-[28px] font-semibold box-border caret-transparent tracking-[-0.84px] leading-[30.8px] capitalize text-nowrap font-geist md:text-5xl md:tracking-[-1.44px] md:leading-[52.8px]">
-                              $99
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                      <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                        /month
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
-                    <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                      For fast-growing teams who are scaling.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center order-1 gap-y-4 w-full">
-                <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                  <p className="text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                    What&#39;s included
-                  </p>
-                </div>
-                <div className="relative content-center items-center box-border caret-transparent gap-x-3 flex flex-col shrink-0 h-min justify-center gap-y-3 w-full">
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Everything in starter
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          50,000 tracked users
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Funnel &amp; drop-off analysis
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Custom dashboards
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Team collaboration tools
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative box-border caret-transparent shrink-0 w-full">
-                  <a
-                    href="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
-                    className="relative text-blue-700 content-center items-center bg-blue-600 shadow-[rgba(18,109,251,0)_0px_0px_0px_0px,rgba(18,109,251,0)_0px_0px_0px_0px,rgba(18,109,251,0)_0px_0px_0px_0px] box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif"
-                  >
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex blur-0 shrink-0 h-min justify-center gap-y-2.5 w-min">
-                      <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                        <p className="text-white text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
-                          Get Started
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <PricingCard
+              planName="Advanced"
+              price={renderAnimatedPrice(displayPrices.advanced, prevPrices.advanced, "advanced")}
+              description="Best for startups, SMBs and fast growing projects"
+              features={[
+                "300 AI assistant requests",
+                "5 active projects",
+                "Unlimited active workflows",
+                "10 subflows per workflow",
+                "100k executions",
+                "5 members per project",
+                "20 entities",
+                "50k database records",
+                "10 GB of storage",
+              ]}
+              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+              variant="bg-white rounded-[18px]"
+              buttonLabel="Start free trial"
+            />
           </div>
         </div>
         <div className="relative box-border caret-transparent basis-0 grow shrink-0 w-px">
           <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-full overflow-hidden rounded-[20px]">
-            <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full p-4">
-              <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full overflow-hidden">
-                <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                  <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-                    Premium
-                  </h5>
-                </div>
-                <div className="relative content-start items-start box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden">
-                  <div className="relative content-center items-center box-border caret-transparent gap-x-1 flex shrink-0 h-min justify-center gap-y-1 w-min overflow-hidden">
-                    <div className="relative box-border caret-transparent shrink-0">
-                      <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col h-min justify-center gap-y-2.5 w-min overflow-hidden">
-                        <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-min">
-                          <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                            <h2 className="text-[28px] font-semibold box-border caret-transparent tracking-[-0.84px] leading-[30.8px] capitalize text-nowrap font-geist md:text-5xl md:tracking-[-1.44px] md:leading-[52.8px]">
-                              $299
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                      <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                        /month
-                      </p>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
-                    <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                      Great for enterprizes to convert more.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full">
-                <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                  <p className="text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-                    What&#39;s included
-                  </p>
-                </div>
-                <div className="relative content-center items-center box-border caret-transparent gap-x-3 flex flex-col shrink-0 h-min justify-center gap-y-3 w-full">
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          All Growth features
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Unlimited tracked users
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Dedicated account manager
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          SLA &amp; compliance support
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative box-border caret-transparent shrink-0 w-full">
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex h-min justify-start gap-y-2 w-full">
-                      <div className="relative box-border caret-transparent shrink-0">
-                        <div className="relative content-center items-center bg-neutral-100 shadow-[rgb(228,228,228)_0px_0px_0px_1.3px] box-border caret-transparent gap-x-2.5 flex h-3.5 justify-center gap-y-2.5 w-3.5 rounded-[50px]">
-                          <div className="relative box-border caret-transparent shrink-0 h-3.5 w-2.5">
-                            <div className="box-border caret-transparent contents"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
-                        <p className="text-zinc-600/80 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] break-words font-geist">
-                          Advanced integrations
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative box-border caret-transparent shrink-0 w-full">
-                  <a
-                    href="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
-                    className="relative text-blue-700 content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif"
-                  >
-                    <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex blur-0 shrink-0 h-min justify-center gap-y-2.5 w-min">
-                      <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
-                        <p className="text-white text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
-                          Get Started
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <PricingCard
+              planName="Pro"
+              price={renderAnimatedPrice(displayPrices.pro, prevPrices.pro, "pro")}
+              description="Perfect for scaling businesses and complex projects"
+              features={[
+                "300 AI assistant requests",
+                "10 active projects",
+                "30 active workflows",
+                "Unlimited subflows",
+                "300k executions",
+                "10 members per project",
+                "Unlimited entities",
+                "100k database records",
+                "100 GB of storage",
+              ]}
+              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+              buttonLabel="Start free trial"
+            />
+          </div>
+        </div>
+        <div className="relative box-border caret-transparent basis-0 grow shrink-0 w-px">
+          <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-full overflow-hidden rounded-[20px]">
+            <PricingCard
+              planName="Enterprise"
+              price="Custom"
+              priceSuffix=""
+              description="Perfect for secure, scalable enterprise automation"
+              features={[
+                "1000 AI assistant requests",
+                "Unlimited active projects",
+                "Unlimited active workflows",
+                "Unlimited subflows",
+                "Unlimited executions",
+                "Unlimited members",
+                "Unlimited entities",
+                "Unlimited database records",
+                "Unlimited storage",
+              ]}
+              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
+              buttonLabel="Start free trial"
+            />
           </div>
         </div>
       </div>
     </div>
   );
 };
-

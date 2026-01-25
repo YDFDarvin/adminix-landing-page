@@ -8,7 +8,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="We used Alytics to track onboarding drop-off and spotted a friction point instantly. After one small UX tweak, our activation rate jumped by 23%."
+                testimonialText="We used Adminix to track onboarding drop-off and spotted a friction point instantly. After one small UX tweak, our activation rate jumped by 23%."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/Ja8p9J3F9vN86Z3j6hBjs1zT9SY.png?width=101&height=101"
                 avatarVariant="aspect-[auto_101_/_101]"
@@ -20,7 +20,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="I’ve tried nearly every analytics tool out there, and Alytics is by far the most intuitive. No need for devs to set things up—our marketing team was running insights independently in hours."
+                testimonialText="I’ve tried nearly every anAdminix tool out there, and Adminix is by far the most intuitive. No need for devs to set things up—our marketing team was running insights independently in hours."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/kVI5rNJF2u29dE47wJKBMhBHIVc.png?width=904&height=1200"
                 avatarVariant="aspect-[auto_904_/_1200] rounded-xl"
@@ -32,7 +32,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="It’s like product analytics finally caught up with design. We use Alytics not just for numbers—but to tell the story behind them. It’s become our go-to tool for every launch."
+                testimonialText="It’s like product anAdminix finally caught up with design. We use Adminix not just for numbers—but to tell the story behind them. It’s become our go-to tool for every launch."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/g9u5lc8a7bhRVYmAcLaz2V8Vd0.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200]"
@@ -44,7 +44,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="Alytics gave us visibility we didn’t even know we were missing. Within the first week, we discovered which features were actually driving retention. It’s clean and fast."
+                testimonialText="Adminix gave us visibility we didn’t even know we were missing. Within the first week, we discovered which features were actually driving retention. It’s clean and fast."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/toL76daUzF0G3CNvrUyjLIYRBU.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200]"
@@ -56,7 +56,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="Since switching to Alytics, we finally understand how users interact with our product. The event tracking is super intuitive and actionable."
+                testimonialText="Since switching to Adminix, we finally understand how users interact with our product. The event tracking is super intuitive and actionable."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/eqelcmPilFO99lTneGHDJtQO7w.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200]"
@@ -68,7 +68,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="We used Alytics to track onboarding drop-off and spotted a friction point instantly. After one small UX tweak, our activation rate jumped by 23%."
+                testimonialText="We used Adminix to track onboarding drop-off and spotted a friction point instantly. After one small UX tweak, our activation rate jumped by 23%."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/Ja8p9J3F9vN86Z3j6hBjs1zT9SY.png?width=101&height=101"
                 avatarVariant="aspect-[auto_101_/_101]"
@@ -80,7 +80,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="I’ve tried nearly every analytics tool out there, and Alytics is by far the most intuitive. No need for devs to set things up—our marketing team was running insights independently in hours."
+                testimonialText="I’ve tried nearly every anAdminix tool out there, and Adminix is by far the most intuitive. No need for devs to set things up—our marketing team was running insights independently in hours."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/kVI5rNJF2u29dE47wJKBMhBHIVc.png?width=904&height=1200"
                 avatarVariant="aspect-[auto_904_/_1200] rounded-xl"
@@ -92,7 +92,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="It’s like product analytics finally caught up with design. We use Alytics not just for numbers—but to tell the story behind them. It’s become our go-to tool for every launch."
+                testimonialText="It’s like product anAdminix finally caught up with design. We use Adminix not just for numbers—but to tell the story behind them. It’s become our go-to tool for every launch."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/g9u5lc8a7bhRVYmAcLaz2V8Vd0.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200] rounded-xl"
@@ -104,7 +104,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="Alytics gave us visibility we didn’t even know we were missing. Within the first week, we discovered which features were actually driving retention. It’s clean and fast."
+                testimonialText="Adminix gave us visibility we didn’t even know we were missing. Within the first week, we discovered which features were actually driving retention. It’s clean and fast."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/toL76daUzF0G3CNvrUyjLIYRBU.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200] rounded-xl"
@@ -116,7 +116,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="Since switching to Alytics, we finally understand how users interact with our product. The event tracking is super intuitive and actionable."
+                testimonialText="Since switching to Adminix, we finally understand how users interact with our product. The event tracking is super intuitive and actionable."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/eqelcmPilFO99lTneGHDJtQO7w.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200]"
@@ -128,7 +128,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="We used Alytics to track onboarding drop-off and spotted a friction point instantly. After one small UX tweak, our activation rate jumped by 23%."
+                testimonialText="We used Adminix to track onboarding drop-off and spotted a friction point instantly. After one small UX tweak, our activation rate jumped by 23%."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/Ja8p9J3F9vN86Z3j6hBjs1zT9SY.png?width=101&height=101"
                 avatarVariant="aspect-[auto_101_/_101] rounded-xl"
@@ -140,7 +140,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="I’ve tried nearly every analytics tool out there, and Alytics is by far the most intuitive. No need for devs to set things up—our marketing team was running insights independently in hours."
+                testimonialText="I’ve tried nearly every anAdminix tool out there, and Adminix is by far the most intuitive. No need for devs to set things up—our marketing team was running insights independently in hours."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/kVI5rNJF2u29dE47wJKBMhBHIVc.png?width=904&height=1200"
                 avatarVariant="aspect-[auto_904_/_1200] rounded-xl"
@@ -152,7 +152,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="It’s like product analytics finally caught up with design. We use Alytics not just for numbers—but to tell the story behind them. It’s become our go-to tool for every launch."
+                testimonialText="It’s like product anAdminix finally caught up with design. We use Adminix not just for numbers—but to tell the story behind them. It’s become our go-to tool for every launch."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/g9u5lc8a7bhRVYmAcLaz2V8Vd0.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200] rounded-xl"
@@ -164,7 +164,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="Alytics gave us visibility we didn’t even know we were missing. Within the first week, we discovered which features were actually driving retention. It’s clean and fast."
+                testimonialText="Adminix gave us visibility we didn’t even know we were missing. Within the first week, we discovered which features were actually driving retention. It’s clean and fast."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/toL76daUzF0G3CNvrUyjLIYRBU.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200]"
@@ -176,7 +176,7 @@ export const TestimonialCarousel = () => {
           <li className="box-border caret-transparent h-[342px] w-[352px]">
             <div className="relative box-border caret-transparent shrink-0 h-[342px] w-[352px]">
               <TestimonialCard
-                testimonialText="Since switching to Alytics, we finally understand how users interact with our product. The event tracking is super intuitive and actionable."
+                testimonialText="Since switching to Adminix, we finally understand how users interact with our product. The event tracking is super intuitive and actionable."
                 quoteIconUrl="https://framerusercontent.com/images/UBNbepHJf0KbEt8th3mWIASU8.svg?width=23&height=17"
                 avatarUrl="https://framerusercontent.com/images/eqelcmPilFO99lTneGHDJtQO7w.png?width=800&height=1200"
                 avatarVariant="aspect-[auto_800_/_1200]"
@@ -190,3 +190,4 @@ export const TestimonialCarousel = () => {
     </div>
   );
 };
+

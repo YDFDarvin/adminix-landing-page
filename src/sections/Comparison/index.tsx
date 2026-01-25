@@ -8,7 +8,7 @@ export const Comparison = () => {
         <div className="box-border caret-transparent contents">
           <div className="relative box-border caret-transparent shrink-0 w-full">
             <SectionHeader
-              label="Why Alytics"
+              label="Why Adminix"
               title="A smarter way to grow with data"
               description="Turn complex metrics into clear insights that help you make better decisions, faster."
             />
@@ -23,3 +23,4 @@ export const Comparison = () => {
     </section>
   );
 };
+

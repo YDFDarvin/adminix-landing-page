@@ -32,7 +32,7 @@ export const TrustBadge = () => {
       </div>
       <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
         <p className="text-blue-600 text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
-          Trusted by 1M+ users
+          Trusted by hundreds of users
         </p>
       </div>
     </div>

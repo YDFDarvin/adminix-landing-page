@@ -15,19 +15,20 @@ export const FAQList = () => {
           />
         </div>
         <FAQItem
-          question="Do I need technical skills to use Alytics?"
+          question="Do I need technical skills to use Adminix?"
           isExpanded={false}
         />
         <FAQItem
-          question="Can Alytics integrate with tools we already use?"
+          question="Can Adminix integrate with tools we already use?"
           isExpanded={false}
         />
-        <FAQItem question="Is my data secure on Alytics?" isExpanded={false} />
+        <FAQItem question="Is my data secure on Adminix?" isExpanded={false} />
         <FAQItem
-          question="Can I try Alytics before committing?"
+          question="Can I try Adminix before committing?"
           isExpanded={false}
         />
       </div>
     </div>
   );
 };
+

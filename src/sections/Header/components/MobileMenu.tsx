@@ -3,6 +3,11 @@ import { CTAButton } from "@/components/CTAButton";
 
 export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const handleNavClick = (id: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    setIsOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <>
@@ -32,46 +37,39 @@ export const MobileMenu = () => {
         <div className="fixed inset-0 bg-white z-50 top-[60px]">
           <nav className="flex flex-col gap-2 p-6">
             <a
-              href="https://alytics.framer.website/#features"
+              href="#features"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={() => setIsOpen(false)}
+              onClick={handleNavClick("features")}
             >
               Features
             </a>
             <a
-              href="https://alytics.framer.website/#benefits"
+              href="#benefits"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={() => setIsOpen(false)}
+              onClick={handleNavClick("benefits")}
             >
               Benefits
             </a>
             <a
-              href="https://alytics.framer.website/#integrations"
+              href="#integrations"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={() => setIsOpen(false)}
+              onClick={handleNavClick("integrations")}
             >
               Integrations
             </a>
             <a
-              href="https://alytics.framer.website/#pricing"
+              href="#pricing"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={() => setIsOpen(false)}
+              onClick={handleNavClick("pricing")}
             >
               Pricing
             </a>
             <a
-              href="https://alytics.framer.website/#faq"
+              href="#faq"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={() => setIsOpen(false)}
+              onClick={handleNavClick("faq")}
             >
               FAQ
-            </a>
-            <a
-              href="https://alytics.framer.website/blog"
-              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              Blogs
             </a>
             <div className="mt-4">
               <CTAButton />
