@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Features } from "@/sections/Features";
@@ -12,6 +13,35 @@ import { Newsletter } from "@/sections/Newsletter";
 import { Footer } from "@/sections/Footer";
 
 export const App = () => {
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-reveal]"),
+    );
+
+    if (sections.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <body className="text-black text-xs not-italic normal-nums font-normal accent-auto bg-neutral-100 box-border caret-transparent block tracking-[normal] leading-[normal] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-sans_serif">
       <div className="box-border caret-transparent">

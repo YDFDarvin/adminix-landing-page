@@ -8,7 +8,7 @@ export const PricingToggle = () => {
     advanced: Math.round(monthlyPrices.advanced * 0.85),
     pro: Math.round(monthlyPrices.pro * 0.85),
   };
-  const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(true);
   const formatPrice = (value: number) => `$${value}`;
   const prices = isYearly ? yearlyPrices : monthlyPrices;
   const displayPrices = {

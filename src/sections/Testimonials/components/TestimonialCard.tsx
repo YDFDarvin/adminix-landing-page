@@ -11,7 +11,7 @@ export const TestimonialCard = (props: TestimonialCardProps) => {
   return (
     <div className="relative content-start items-start bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent flex flex-col h-[342px] justify-between w-full rounded-[20px]">
       <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden p-6">
-        <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px">
+        <div className="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px pl-8">
           <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] break-words font-geist">
             {props.testimonialText}
           </p>
