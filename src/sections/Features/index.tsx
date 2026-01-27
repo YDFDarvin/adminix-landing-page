@@ -12,9 +12,9 @@ export const Features = () => {
         <div className="box-border caret-transparent contents">
           <div className="relative box-border caret-transparent shrink-0 w-full">
             <SectionHeader
-              label="Unique Features"
-              title="Make your platform work harder for you"
-              description="Streamline your business with unified metrics and AI-powered anAdminix—all in one place."
+              label="Our Features"
+              title="Get a Complete Internal Software Out of the Box"
+              description="Design, automate and manage internal business software from one AI-powered platform - no technical skills required"
             />
           </div>
         </div>
@@ -38,13 +38,12 @@ export const Features = () => {
                   <div className="relative content-start items-start box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-start gap-y-2 w-full overflow-hidden px-2">
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full">
                       <h4 className="text-xl font-semibold box-border caret-transparent tracking-[-0.4px] leading-6 break-words font-geist md:text-2xl md:tracking-[-0.48px] md:leading-[28.8px]">
-                        Product Usage Tracking
+                        Visual UI Builder
                       </h4>
                     </div>
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[400px] w-full">
                       <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                        Track how users engage with your app live to uncover
-                        patterns and optimize features.
+                        Design custom admin interfaces to manage data, users and operations in one unified workspace.
                       </p>
                     </div>
                   </div>
@@ -68,13 +67,12 @@ export const Features = () => {
                   <div className="relative content-start items-start box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-start gap-y-2 w-full overflow-hidden px-2">
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full">
                       <h4 className="text-xl font-semibold box-border caret-transparent tracking-[-0.4px] leading-6 break-words font-geist md:text-2xl md:tracking-[-0.48px] md:leading-[28.8px]">
-                        Feature Impact Analysis
+                        Workflow Automation
                       </h4>
                     </div>
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[400px] w-full">
                       <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                        Know exactly which features drive long-term
-                        retention—and which ones don’t contribute.
+                        Design and automate business processes with visual workflows that connect actions, data and external services.
                       </p>
                     </div>
                   </div>

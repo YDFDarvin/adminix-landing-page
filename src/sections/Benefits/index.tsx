@@ -13,8 +13,8 @@ export const Benefits = () => {
           <div className="relative box-border caret-transparent shrink-0 w-full">
             <SectionHeader
               label="Benefits"
-              title="Benefits That Truly Matter to You"
-              description="Monitor metrics as they happen, so you can respond quickly and keep your goals on track."
+              title="Benefits That Truly Matter to Your Team"
+              description="Develop faster, stay flexible and get internal software that you can rely on in production."
             />
           </div>
         </div>
@@ -32,13 +32,12 @@ export const Benefits = () => {
                   <div className="relative content-start items-start box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-center gap-y-2 w-full overflow-hidden">
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-                        Secure Data
+                        Production-Ready by Design
                       </h5>
                     </div>
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                        Keep your anAdminix safe with advanced security and
-                        strong encryption.
+                        Build internal tools meant for real usage, with structure, permissions and long-term stability.
                       </p>
                     </div>
                   </div>
@@ -56,13 +55,12 @@ export const Benefits = () => {
                   <div className="relative content-start items-start box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-center gap-y-2 w-full overflow-hidden">
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-                        Custom Reports
+                        Scales with Your Business
                       </h5>
                     </div>
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                        Create tailored reports that fit your needs and
-                        highlight key insights.
+                        Grow and evolve your internal systems as operations become more complex - without platform limitations.
                       </p>
                     </div>
                   </div>
@@ -80,13 +78,12 @@ export const Benefits = () => {
                   <div className="relative content-start items-start box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-center gap-y-2 w-full overflow-hidden">
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-                        Simple to Use
+                        Lower Long-Term Costs
                       </h5>
                     </div>
                     <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start w-full">
                       <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
-                        Navigate easily—no steep learning curve, start making
-                        better decisions quickly.
+                        Reduce ongoing development and maintenance costs by building tools that last.
                       </p>
                     </div>
                   </div>

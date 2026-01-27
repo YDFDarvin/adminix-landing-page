@@ -1,37 +1,5 @@
 const logos = [
   {
-    src: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/slack.svg",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/github.svg",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-sheets.svg",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://img.icons8.com/color/96/amazon-web-services.png",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-docs.svg",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/gmail.svg",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-gemini.svg",
-    className: "w-10 aspect-square",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/algolia.svg",
-    className: "w-10 aspect-square",
-  },
-  {
     src: "https://claimtechnology.co.uk/wp-content/uploads/2020/06/xfooter-logo.png.pagespeed.ic.nP0oq8Jksp.png",
     className: "w-[140px] aspect-[3.5_/_1]",
     imgClassName: "brightness-0",
@@ -41,15 +9,23 @@ const logos = [
     className: "w-[150px] aspect-[4_/_1]",
   },
   {
-    src: "https://www.google.com/s2/favicons?domain=hygraph.com&sz=128",
-    className: "w-10 aspect-square",
-  },
-  {
     src: "https://www.google.com/s2/favicons?domain=neo-fin.com&sz=128",
     className: "w-10 aspect-square",
   },
   {
     src: "https://bmotion.technology/wp-content/uploads/2016/03/logo_white_outlines_dark-01-300x118.png",
+    className: "w-[140px] aspect-[2.5_/_1]",
+  },
+  {
+    src: "https://seedsofbravery.eu/wp-content/uploads/2024/02/seeds_logo_black_eng.png",
+    className: "w-[140px] aspect-[2.5_/_1]",
+  },
+  {
+    src: "https://vc4a.com/wp-content/uploads/2021/10/Notion.png",
+    className: "aspect-[2.5_/_1]",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Logo_for_Google_for_Startups_page.png",
     className: "w-[140px] aspect-[2.5_/_1]",
   },
 ];
@@ -60,7 +36,7 @@ export const LogoCarousel = () => {
       <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full px-2.5 md:gap-x-6 md:gap-y-6 md:px-0">
         <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
           <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
-            Integrations, Partners and Clients
+            Trusted by
           </h5>
         </div>
         <div className="relative box-border caret-transparent shrink-0 h-[55px] w-[90%] md:w-[70%]">

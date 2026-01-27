@@ -9,8 +9,8 @@ export const FeatureGrid = () => {
             imageUrl="https://framerusercontent.com/images/UasGKBRyLZHeUJr1HL5mRgukJU.png?width=4000&height=2216"
             imageAlt="Dashboard showing MRR of $69,897 and 1206 active users with an upward trend graph."
             imageClassName="aspect-[auto_4000_/_2216]"
-            title="Unified Metrics"
-            description="See your MRR and active users in one clean, unified view — no more switching tabs."
+            title="AI-Assisted Software Creation"
+            description="Use AI to design complete internal software - from data structure to workflows and UI - based on your business needs."
           />
         </div>
       </div>
@@ -20,8 +20,8 @@ export const FeatureGrid = () => {
             imageUrl="https://framerusercontent.com/images/eUVqpWJ3R7uJaOJnHDYhRMM4WPE.png?width=4000&height=2216"
             imageAlt="AI suggesting actions like 'Optimize onboarding flow' and 'Raise pricing tier' based on user data."
             imageClassName="aspect-[auto_4000_/_2216]"
-            title="AI Growth Insights"
-            description="Actionable suggestions from your data, without digging into spreadsheets or dashboards."
+            title="Data Management"
+            description="Create structured data models, permissions and business rules that power your internal systems."
           />
         </div>
       </div>

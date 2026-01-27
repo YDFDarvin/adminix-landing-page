@@ -6,24 +6,24 @@ export const BenefitGrid = () => {
       <div className="box-border caret-transparent contents">
         <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full lg:basis-0 lg:grow lg:w-px">
           <BenefitCard
-            title="Real-Time Tracking"
-            description="Monitor user activity instantly for smarter decision-making."
+            title="Start Faster with Templates"
+            description="Use pre-set templates to launch internal tools quickly, without building everything from scratch."
           />
         </div>
       </div>
       <div className="box-border caret-transparent contents">
         <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:grow md:w-px">
           <BenefitCard
-            title="All-in-One View"
-            description="Keep all your anAdminix in one place, without jumping between tools."
+            title="AI That Builds a Complete Structure"
+            description="AI Assistant helps design data models, workflows and interfaces as one connected system."
           />
         </div>
       </div>
       <div className="box-border caret-transparent contents">
         <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:grow md:w-px">
           <BenefitCard
-            title="Actionable Insights"
-            description="Track the metrics that matter most for sustainable business growth."
+            title="Customization Without Rework"
+            description="Adapt UI, logic and workflows to your processes without rebuilding tools again and again."
           />
         </div>
       </div>

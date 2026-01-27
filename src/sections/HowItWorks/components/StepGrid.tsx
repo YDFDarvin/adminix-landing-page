@@ -6,8 +6,8 @@ export const StepGrid = () => {
       <div className="box-border caret-transparent contents">
         <div className="relative self-start box-border caret-transparent shrink-0 justify-self-start w-full">
           <StepCard
-            title="Connect your product"
-            description="Integrate in minutes with your existing stack—no engineering lift required."
+            title="Define What You Want to Build"
+            description="Begin with an AI assistant or choose a pre-set template to define your internal tool."
             imageUrl="https://framerusercontent.com/images/eZxPRr9DFJ1LBw2C6XgbmteUwk.png?width=6000&height=3673"
             imageAlt="Logos of tools outward, illustrating easy integration with no engineering required."
             imageClassName="aspect-[auto_6000_/_3673]"
@@ -17,8 +17,8 @@ export const StepGrid = () => {
       <div className="box-border caret-transparent contents">
         <div className="relative self-start box-border caret-transparent shrink-0 justify-self-start w-full">
           <StepCard
-            title="Track User Behavior"
-            description="See what’s used, what’s dropped, and what keeps users engaged."
+            title="Review Your Software"
+            description="Review the generated data model, workflows and interface as a complete internal system."
             imageUrl="https://framerusercontent.com/images/MTi16xQQXh1uLFK6rlUiLRrhNc4.png?width=6000&height=3528"
             imageAlt="Gauge showing levels of user engagement, with tags for high and low engagement percentages."
             imageClassName="aspect-[auto_6000_/_3528]"
@@ -28,8 +28,8 @@ export const StepGrid = () => {
       <div className="box-border caret-transparent contents">
         <div className="relative self-start box-border caret-transparent shrink-0 justify-self-start w-full">
           <StepCard
-            title="Turn Insights Into Action"
-            description="Get clear, actionable recommendations to boost retention and grow MRR."
+            title="Customize and Launch"
+            description="Adjust interfaces and logic to your business needs, then deploy a scalable, production-ready internal system."
             imageUrl="https://framerusercontent.com/images/WVfMImGvfZB1ZvVOi4f8QpGgcQ.png?width=6000&height=3615"
             imageAlt="Envelope containing recommendations like “Fix churn spike” and “Action,” symbolizing actionable insights."
             imageClassName="aspect-[auto_6000_/_3615]"

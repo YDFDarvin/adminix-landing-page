@@ -23,7 +23,7 @@ export const FooterContent = () => {
       </div>
       <div className="relative content-start items-start box-border caret-transparent gap-x-5 flex flex-col basis-auto grow-0 shrink-0 h-min justify-center w-full gap-y-5 md:flex-row lg:basis-0 lg:grow lg:max-w-[500px] lg:w-px">
         <FooterLinks
-          title="Sections"
+          title="Product"
           links={[
             {
               text: "Features",
@@ -45,21 +45,18 @@ export const FooterContent = () => {
           ]}
         />
         <FooterLinks
-          title="Socials"
+          title="Resources"
           links={[
             { text: "Facebook", href: "https://www.facebook.com/adminixio" },
-            { text: "Twitter/X", href: "https://x.com/adminixio" },
             { text: "Linkedin", href: "https://www.linkedin.com/company/adminix-io/" },
+            { text: "Blog", href: "/blog" },
           ]}
         />
         <FooterLinks
-          title="Pages"
+          title="Legal"
           links={[
-            { text: "Home", href: "/" },
-            {
-              text: "Newsletter",
-              href: "/newsletter",
-            },
+            { text: "Privacy Policy", href: "/privacy" },
+            { text: "Terms of Service", href: "/terms" },
           ]}
         />
       </div>

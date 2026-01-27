@@ -9,7 +9,7 @@ import { Testimonials } from "@/sections/Testimonials";
 import { Pricing } from "@/sections/Pricing";
 import { Comparison } from "@/sections/Comparison";
 import { FAQ } from "@/sections/FAQ";
-import { Newsletter } from "@/sections/Newsletter";
+// import { Newsletter } from "@/sections/Newsletter";
 import { Footer } from "@/sections/Footer";
 
 export const App = () => {
@@ -59,9 +59,9 @@ export const App = () => {
               <Integrations />
               <Testimonials />
               <Pricing />
-              <Comparison />
+              {/* <Comparison /> */}
               <FAQ />
-              <Newsletter />
+              {/* <Newsletter /> */}
             </main>
           </div>
           <div className="box-border caret-transparent"></div>

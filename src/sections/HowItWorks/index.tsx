@@ -11,9 +11,9 @@ export const HowItWorks = () => {
         <div className="box-border caret-transparent contents">
           <div className="relative box-border caret-transparent shrink-0 w-full">
             <SectionHeader
-              label="How It Works"
-              title="Get clear answers in 3 simple steps"
-              description="From data to clarity—uncover insights, take action, and grow smarter in three simple steps."
+              label="How Adminix Works"
+              title="Get your software in 3 simple steps"
+              description="From idea to production-ready internal software in three clear steps"
             />
           </div>
         </div>
