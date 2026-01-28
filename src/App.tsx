@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Features } from "@/sections/Features";
@@ -12,7 +14,27 @@ import { FAQ } from "@/sections/FAQ";
 // import { Newsletter } from "@/sections/Newsletter";
 import { Footer } from "@/sections/Footer";
 
-export const App = () => {
+const HomePage = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      return;
+    }
+
+    const targetId = hash.replace("#", "");
+    if (!targetId) {
+      return;
+    }
+
+    const target = document.getElementById(targetId);
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash]);
+
   useEffect(() => {
     const sections = Array.from(
       document.querySelectorAll<HTMLElement>("[data-reveal]"),
@@ -99,5 +121,14 @@ export const App = () => {
         <div></div>
       </div>
     </body>
+  );
+};
+
+export const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+    </Routes>
   );
 };

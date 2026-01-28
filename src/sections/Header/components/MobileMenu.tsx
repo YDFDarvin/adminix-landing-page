@@ -1,12 +1,17 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { CTAButton } from "@/components/CTAButton";
 
 export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
   const handleNavClick = (id: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
     setIsOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const target = document.getElementById(id);
+    if (pathname === "/" && target) {
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -36,41 +41,41 @@ export const MobileMenu = () => {
       {isOpen && (
         <div className="fixed inset-0 bg-white z-50 top-[60px]">
           <nav className="flex flex-col gap-2 p-6">
-            <a
-              href="#features"
+            <Link
+              to="/#features"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
               onClick={handleNavClick("features")}
             >
               Features
-            </a>
-            <a
-              href="#benefits"
+            </Link>
+            <Link
+              to="/#benefits"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
               onClick={handleNavClick("benefits")}
             >
               Benefits
-            </a>
-            <a
-              href="#integrations"
+            </Link>
+            <Link
+              to="/#integrations"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
               onClick={handleNavClick("integrations")}
             >
               Integrations
-            </a>
-            <a
-              href="#pricing"
+            </Link>
+            <Link
+              to="/#pricing"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
               onClick={handleNavClick("pricing")}
             >
               Pricing
-            </a>
-            <a
-              href="#faq"
+            </Link>
+            <Link
+              to="/#faq"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
               onClick={handleNavClick("faq")}
             >
               FAQ
-            </a>
+            </Link>
             <div className="mt-4">
               <CTAButton />
             </div>
