@@ -47,7 +47,12 @@ export const FooterLinks = (props: FooterLinksProps) => {
           >
             <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
               {isExternalLink(link.href) ? (
-                <a href={link.href} className="box-border caret-transparent text-nowrap">
+                <a
+                  href={link.href}
+                  className="box-border caret-transparent text-nowrap"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {link.text}
                 </a>
               ) : isHashLink(link.href) ? (
