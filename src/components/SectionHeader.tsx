@@ -17,7 +17,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
         </div>
       </div>
       <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full">
-        <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[450px] w-full">
+        <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[630px] w-full">
           <h2 className="text-[28px] font-semibold box-border caret-transparent tracking-[-0.84px] leading-[30.8px] text-center capitalize font-geist md:text-5xl md:tracking-[-1.44px] md:leading-[52.8px]">
             {props.title}
           </h2>

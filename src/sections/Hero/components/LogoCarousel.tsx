@@ -32,7 +32,7 @@ const logos = [
 
 export const LogoCarousel = () => {
   return (
-    <div className="relative content-center items-center box-border caret-transparent gap-x-7 flex flex-col shrink-0 h-min justify-center gap-y-7 w-full">
+    <div className="mt-10 relative content-center items-center box-border caret-transparent gap-x-7 flex flex-col shrink-0 h-min justify-center gap-y-7 w-full">
       <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full px-2.5 md:gap-x-6 md:gap-y-6 md:px-0">
         <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
           <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] text-nowrap font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
