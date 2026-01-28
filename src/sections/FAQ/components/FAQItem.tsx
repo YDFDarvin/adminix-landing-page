@@ -34,9 +34,20 @@ export const FAQItem = (props: FAQItemProps) => {
         onChange={(_, expanded) => props.onToggle?.(expanded)}
         sx={{
           backgroundColor: "#ffffff",
-          borderRadius: "16px",
+          borderRadius: "24px !important",
           boxShadow: "0px 1px 20px rgba(0, 0, 0, 0.03)",
           overflow: "hidden",
+          "&.MuiPaper-root": {
+            borderRadius: "24px !important",
+          },
+          "& .MuiAccordionSummary-root": {
+            borderTopLeftRadius: "24px",
+            borderTopRightRadius: "24px",
+          },
+          "& .MuiAccordionDetails-root": {
+            borderBottomLeftRadius: "24px",
+            borderBottomRightRadius: "24px",
+          },
           "&:before": { display: "none" },
         }}
       >
