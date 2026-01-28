@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsOfService } from "@/pages/TermsOfService";
+import { Blog } from "@/pages/Blog";
+import { Contact } from "@/pages/Contact";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Features } from "@/sections/Features";
@@ -126,11 +128,23 @@ const HomePage = () => {
 };
 
 export const App = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname, hash]);
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 };

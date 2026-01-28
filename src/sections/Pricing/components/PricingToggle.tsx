@@ -120,7 +120,6 @@ export const PricingToggle = () => {
                 "10k database records",
                 "1 GB of storage",
               ]}
-              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
               buttonLabel="Start free trial"
             />
           </div>
@@ -147,7 +146,6 @@ export const PricingToggle = () => {
                 "50k database records",
                 "10 GB of storage",
               ]}
-              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
               variant="bg-white rounded-[18px]"
               buttonLabel="Start free trial"
             />
@@ -170,7 +168,6 @@ export const PricingToggle = () => {
                 "100k database records",
                 "100 GB of storage",
               ]}
-              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
               buttonLabel="Start free trial"
             />
           </div>
@@ -193,7 +190,6 @@ export const PricingToggle = () => {
                 "Unlimited database records",
                 "Unlimited storage",
               ]}
-              buttonUrl="https://framer.com/remix/sYqnVgaJ6jfdOyaORZkY"
               buttonLabel="Start free trial"
             />
           </div>
