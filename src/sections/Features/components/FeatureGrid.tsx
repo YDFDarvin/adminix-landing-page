@@ -1,3 +1,4 @@
+import { AIAssistantMock } from "@/sections/Features/components/AIAssistantMock";
 import { FeatureCard } from "@/sections/Features/components/FeatureCard";
 
 export const FeatureGrid = () => {
@@ -6,9 +7,7 @@ export const FeatureGrid = () => {
       <div className="box-border caret-transparent contents">
         <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-[calc(50%-10px)] md:grow-0 md:w-auto lg:basis-0 lg:grow lg:w-px">
           <FeatureCard
-            imageUrl="https://framerusercontent.com/images/UasGKBRyLZHeUJr1HL5mRgukJU.png?width=4000&height=2216"
-            imageAlt="Dashboard showing MRR of $69,897 and 1206 active users with an upward trend graph."
-            imageClassName="aspect-[auto_4000_/_2216]"
+            visual={<AIAssistantMock />}
             title="AI-Assisted Software Creation"
             description="Use AI to design complete internal software - from data structure to workflows and UI - based on your business needs."
           />
