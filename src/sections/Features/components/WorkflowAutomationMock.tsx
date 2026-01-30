@@ -16,7 +16,7 @@ export const WorkflowAutomationMock = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_60%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(15,23,42,0.35),_rgba(15,23,42,0.7))]" />
       <div className="relative flex h-full w-full">
-        <div className="flex w-[48%] flex-col bg-[#0b101a]">
+        <div className="hidden w-[48%] flex-col bg-[#0b101a] sm:flex">
           <div className="border-b border-white/10 px-2 py-2">
             <div className="grid w-full grid-cols-2 items-center gap-1 rounded-[12px] border border-white/10 bg-[#121826] p-1 text-[9px] font-semibold text-slate-300 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.2)]">
               <div className="flex min-h-[34px] items-center justify-center gap-1 rounded-[10px] bg-blue-500 px-2 py-1.5 text-white leading-none shadow-[0_8px_18px_rgba(59,130,246,0.3)]">
