@@ -33,7 +33,7 @@ export const FooterLinks = (props: FooterLinksProps) => {
   const isExternalLink = (href: string) => /^https?:\/\//i.test(href);
 
   return (
-    <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex basis-0 flex-col grow shrink-0 h-min justify-start gap-y-4 w-px overflow-hidden">
+    <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-start gap-y-4 w-full overflow-visible md:basis-0 md:grow md:w-px md:overflow-hidden">
       <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full">
         <h5 className="text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[25.2px] break-words font-geist md:text-xl md:tracking-[-0.4px] md:leading-7">
           {props.title}
