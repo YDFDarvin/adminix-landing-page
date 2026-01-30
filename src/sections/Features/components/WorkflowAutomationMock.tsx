@@ -16,7 +16,7 @@ export const WorkflowAutomationMock = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_60%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(15,23,42,0.35),_rgba(15,23,42,0.7))]" />
       <div className="relative flex h-full w-full">
-        <div className="flex w-[48%] flex-col border-r border-white/10 bg-[#0b101a]">
+        <div className="flex w-[48%] flex-col bg-[#0b101a]">
           <div className="border-b border-white/10 px-2 py-2">
             <div className="grid w-full grid-cols-2 items-center gap-1 rounded-[12px] border border-white/10 bg-[#121826] p-1 text-[9px] font-semibold text-slate-300 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.2)]">
               <div className="flex min-h-[34px] items-center justify-center gap-1 rounded-[10px] bg-blue-500 px-2 py-1.5 text-white leading-none shadow-[0_8px_18px_rgba(59,130,246,0.3)]">
@@ -30,7 +30,7 @@ export const WorkflowAutomationMock = () => {
                 </span>
                 Nodes
               </div>
-              <div className="flex min-h-[34px] items-center justify-center gap-1 rounded-[10px] bg-[#1a2133] px-2 py-1.5 text-center text-[9px] leading-none text-slate-200">
+              <div className="flex min-h-[34px] items-center justify-center gap-1 rounded-[10px] bg-[#121826] px-2 py-1.5 text-center text-[9px] leading-none text-slate-200">
                 <span className="flex shrink-0 items-center justify-center">
                   <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
                     <path
@@ -81,7 +81,7 @@ export const WorkflowAutomationMock = () => {
           </div>
         </div>
         <div className="flex min-h-0 flex-1 flex-col">
-          <div className="flex h-10 items-center border-b border-white/10 bg-[#0f1422] pl-3 pr-0 text-[10px] font-medium text-slate-300">
+          <div className="flex h-10 items-center border-b border-white/10 bg-[#0f1422] pr-0 text-[10px] font-medium text-slate-300">
             <div className="flex h-full flex-1 overflow-hidden border border-white/10 bg-[#111827]">
               {[
                 { label: "UI", active: false },
@@ -105,7 +105,7 @@ export const WorkflowAutomationMock = () => {
             </div>
           </div>
           <div className="relative flex-1">
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(148,163,184,0.08)_1px,_transparent_1px),_linear-gradient(0deg,_rgba(148,163,184,0.08)_1px,_transparent_1px)] bg-[size:18px_18px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(148,163,184,0.08)_1px,_transparent_1px),_linear-gradient(0deg,_rgba(148,163,184,0.08)_1px,_transparent_1px)] bg-[size:18px_18px] bg-[position:9px_9px]" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 py-6">
               <div className="relative w-[58%] rounded-[12px] border border-white/10 bg-[#111827] px-3 py-2 shadow-[0_10px_26px_rgba(15,23,42,0.6)]">
                 <div className="flex items-center gap-2 text-[9px] font-semibold text-slate-100">
