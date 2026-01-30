@@ -81,13 +81,27 @@ export const WorkflowAutomationMock = () => {
           </div>
         </div>
         <div className="flex min-h-0 flex-1 flex-col">
-          <div className="flex items-center justify-between border-b border-white/10 bg-[#0f1422] px-3 py-2 text-[10px] font-medium text-slate-300">
-            <div className="flex w-[220px] items-center justify-center border-b-2 border-blue-500 bg-[#111827] px-4 py-1.5 text-slate-100 shadow-[0_8px_18px_rgba(37,99,235,0.25)]">
-              <span>Automations</span>
-              <span className="ml-2 text-[9px] text-slate-500">x</span>
-            </div>
-            <div className="ml-3 flex h-8 w-8 items-center justify-center rounded-[8px] border border-white/10 bg-[#0b101a] text-slate-300">
-              +
+          <div className="flex h-10 items-center border-b border-white/10 bg-[#0f1422] pl-3 pr-0 text-[10px] font-medium text-slate-300">
+            <div className="flex h-full flex-1 overflow-hidden border border-white/10 bg-[#111827]">
+              {[
+                { label: "UI", active: false },
+                { label: "Automations", active: true },
+              ].map(({ label, active }) => (
+                <div
+                  key={label}
+                  className={`flex h-full min-w-0 items-center border-r border-white/10 px-4 ${
+                    active
+                      ? "border-b-2 border-b-blue-500 bg-[#0d1426] text-slate-100"
+                      : "text-slate-400"
+                  }`}
+                >
+                  <span className="min-w-0 flex-1 truncate">{label}</span>
+                  <span className="ml-2 text-[9px] text-slate-500">x</span>
+                </div>
+              ))}
+              <div className="flex h-full w-10 items-center justify-center text-slate-300">
+                +
+              </div>
             </div>
           </div>
           <div className="relative flex-1">
