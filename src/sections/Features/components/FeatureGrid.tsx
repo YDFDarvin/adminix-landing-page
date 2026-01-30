@@ -1,4 +1,5 @@
 import { AIAssistantMock } from "@/sections/Features/components/AIAssistantMock";
+import { DataManagementMock } from "@/sections/Features/components/DataManagementMock";
 import { FeatureCard } from "@/sections/Features/components/FeatureCard";
 
 export const FeatureGrid = () => {
@@ -16,9 +17,7 @@ export const FeatureGrid = () => {
       <div className="box-border caret-transparent contents">
         <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-[calc(50%-10px)] md:grow-0 md:w-auto lg:basis-0 lg:grow lg:w-px">
           <FeatureCard
-            imageUrl="https://framerusercontent.com/images/eUVqpWJ3R7uJaOJnHDYhRMM4WPE.png?width=4000&height=2216"
-            imageAlt="AI suggesting actions like 'Optimize onboarding flow' and 'Raise pricing tier' based on user data."
-            imageClassName="aspect-[auto_4000_/_2216]"
+            visual={<DataManagementMock />}
             title="Data Management"
             description="Create structured data models, permissions and business rules that power your internal systems."
           />
