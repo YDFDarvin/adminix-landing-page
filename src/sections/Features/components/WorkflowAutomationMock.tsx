@@ -177,7 +177,7 @@ export const WorkflowAutomationMock = () => {
                 />
               </div>
               <span
-                className="pointer-events-none absolute h-4 w-4 text-slate-100 drop-shadow-[0_8px_12px_rgba(15,23,42,0.6)]"
+                className="pointer-events-none absolute h-[18.4px] w-[18.4px] text-slate-100 drop-shadow-[0_8px_12px_rgba(15,23,42,0.6)]"
                 style={{ animation: "nodePointer 10s ease-in-out infinite" }}
               >
                 <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
@@ -194,8 +194,8 @@ export const WorkflowAutomationMock = () => {
                 className="pointer-events-none absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-300/70"
                 style={{ animation: "nodeClick 10s ease-in-out infinite" }}
               />
-              <svg
-                className="pointer-events-none absolute left-1/2 top-[44%] h-[14%] w-6 -translate-x-1/2 text-blue-300/80"
+                <svg
+                className="pointer-events-none absolute left-1/2 top-[46%] h-[10%] w-[31px] -translate-x-1/2 text-blue-500"
                 viewBox="0 0 24 100"
                 aria-hidden="true"
                 style={{ animation: "nodeArrow 10s ease-in-out infinite" }}
@@ -215,11 +215,11 @@ export const WorkflowAutomationMock = () => {
                 </defs>
                 <line
                   x1="12"
-                  y1="0"
+                  y1="8"
                   x2="12"
-                  y2="92"
+                  y2="84"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="6.5"
                   markerEnd="url(#nodeArrowHead)"
                 />
               </svg>
