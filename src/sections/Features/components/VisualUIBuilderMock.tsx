@@ -1,6 +1,6 @@
 export const VisualUIBuilderMock = () => {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-[10px] bg-white">
+    <div className="relative h-full w-full select-none overflow-hidden rounded-[10px] bg-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.08),_transparent_60%)]" />
       <div className="relative flex h-full w-full">
         <div className="flex w-[36%] flex-col border-r border-slate-200 bg-white text-[10px] text-slate-700">
@@ -55,7 +55,7 @@ export const VisualUIBuilderMock = () => {
         <div className="relative flex-1 bg-white">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(148,163,184,0.2)_1px,_transparent_1px),_linear-gradient(0deg,_rgba(148,163,184,0.2)_1px,_transparent_1px)] bg-[size:22px_22px]" />
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-[32%] top-[70%] h-6 w-6 text-slate-600 animate-[uiPointer_4.5s_ease-in-out_infinite]">
+            <div className="absolute left-[12%] top-[78%] z-10 h-7 w-7 text-slate-800 drop-shadow-[0_4px_10px_rgba(15,23,42,0.25)] animate-[uiPointer_4.5s_ease-in-out_infinite]">
               <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
                 <path
                   d="M6 3L18 15H12L9 21L6 3Z"
@@ -136,10 +136,10 @@ export const VisualUIBuilderMock = () => {
       <style>
         {`@keyframes uiPointer {
           0% { transform: translate(0, 0) scale(1); opacity: 0; }
-          15% { opacity: 1; }
-          55% { transform: translate(34px, -48px) scale(1); opacity: 1; }
-          65% { transform: translate(34px, -48px) scale(0.96); }
-          100% { transform: translate(70px, -92px) scale(0.98); opacity: 0; }
+          12% { opacity: 1; }
+          60% { transform: translate(64px, -96px) scale(1); opacity: 1; }
+          70% { transform: translate(64px, -96px) scale(0.96); }
+          100% { transform: translate(104px, -140px) scale(0.98); opacity: 0; }
         }
         @keyframes uiClick {
           0%, 60% { transform: scale(0.6); opacity: 0; }

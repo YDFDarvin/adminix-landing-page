@@ -35,22 +35,41 @@ export const AIAssistantMock = () => {
           </div>
         </div>
         <div className="-mx-4 border-t border-white/5" />
-        <div className="flex gap-3">
+        <div className="relative flex gap-3">
           <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/80 text-white">
             <AutoAwesomeIcon fontSize="inherit" />
           </span>
-          <div className="flex-1 rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100">
-            Hi! I can help you generate applications and workflows. Describe what you want to build,
-            and I'll create it for you.
+          <div className="relative flex-1">
+            <div className="rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100 animate-[assistantFade_4.2s_ease-in-out_infinite]">
+              Hi! I can help you generate applications and workflows. Describe what you want to build,
+              and I'll create it for you.
+            </div>
+            <div className="absolute inset-0 flex items-start justify-end">
+              <div className="max-w-[85%] rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.35)] animate-[assistantSlideIn_4.2s_ease-in-out_infinite]">
+                Great -- I can assemble a dashboard layout and data schema for you. Want a CRM or\n                analytics view?
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-1 space-y-1.5">
+        <div className="relative mt-1 space-y-1.5">
           <div className="flex items-center gap-2 text-[10.5px] font-medium text-slate-300">
             <LightbulbOutlinedIcon className="text-[3px]" />
             Try these:
           </div>
-          <div className="rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white">
+          <div className="relative rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white">
             Build a CRM dashboard
+            <span className="pointer-events-none absolute -left-10 -top-6 h-5 w-5 text-slate-100/90 animate-[assistantPointer_4.2s_ease-in-out_infinite]">
+              <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
+                <path
+                  d="M6 3L18 15H12L9 21L6 3Z"
+                  fill="currentColor"
+                  stroke="rgba(15,23,42,0.7)"
+                  strokeWidth="1.2"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="absolute -right-1 -bottom-1 h-2 w-2 rounded-full bg-blue-400/80 animate-[assistantClick_4.2s_ease-in-out_infinite]" />
+            </span>
           </div>
         </div>
         <div className="mt-auto flex items-center gap-2">
@@ -62,6 +81,34 @@ export const AIAssistantMock = () => {
           </div>
         </div>
       </div>
+      <style>
+        {`@keyframes assistantFade {
+          0% { opacity: 1; transform: translateX(0) scale(1); }
+          40% { opacity: 1; transform: translateX(0) scale(1); }
+          55% { opacity: 0; transform: translateX(-8px) scale(0.96); }
+          100% { opacity: 0; transform: translateX(-8px) scale(0.96); }
+        }
+        @keyframes assistantSlideIn {
+          0% { opacity: 0; transform: translateX(28px) scale(0.98); }
+          45% { opacity: 0; transform: translateX(28px) scale(0.98); }
+          70% { opacity: 1; transform: translateX(0) scale(1); }
+          100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        @keyframes assistantPointer {
+          0% { opacity: 0; transform: translate(-24px, -10px) scale(0.9); }
+          15% { opacity: 1; }
+          45% { transform: translate(4px, 12px) scale(1); opacity: 1; }
+          60% { transform: translate(4px, 12px) scale(0.96); opacity: 1; }
+          100% { opacity: 0; transform: translate(4px, 12px) scale(0.96); }
+        }
+        @keyframes assistantClick {
+          0%, 50% { transform: scale(0.2); opacity: 0; }
+          58% { transform: scale(1); opacity: 0.8; }
+          75% { transform: scale(1.6); opacity: 0; }
+          100% { transform: scale(0.2); opacity: 0; }
+        }`}
+      </style>
     </div>
   );
 };
+
