@@ -109,7 +109,7 @@ export const WorkflowAutomationMock = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 py-6">
               <div
                 className="relative w-[72%] aspect-[3/2] overflow-visible rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]"
-                style={{ animation: "nodeHover 6s ease-in-out infinite" }}
+                style={{ animation: "nodeHover 10s ease-in-out infinite" }}
               >
                 <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#22C55E]" />
                 <div className="flex items-center gap-3 pt-2">
@@ -134,12 +134,12 @@ export const WorkflowAutomationMock = () => {
                 </div>
                 <span
                   className="pointer-events-none absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-400/50"
-                  style={{ animation: "nodeFocusDot 6s ease-in-out infinite" }}
+                  style={{ animation: "nodeFocusDot 10s ease-in-out infinite" }}
                 />
               </div>
               <div
-                className="relative w-[72%] aspect-[3/2] overflow-hidden rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]"
-                style={{ animation: "nodeHoverAction 6s ease-in-out infinite" }}
+                className="relative w-[72%] aspect-[3/2] overflow-visible rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]"
+                style={{ animation: "nodeHoverAction 10s linear infinite" }}
               >
                 <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#3B82F6]" />
                 <div className="flex items-center gap-3 pt-2">
@@ -171,10 +171,14 @@ export const WorkflowAutomationMock = () => {
                 <div className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.05em] text-slate-500">
                   ACTION
                 </div>
+                <span
+                  className="pointer-events-none absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-400/50"
+                  style={{ animation: "nodeFocusDotAction 10s ease-in-out infinite" }}
+                />
               </div>
               <span
                 className="pointer-events-none absolute h-4 w-4 text-slate-100 drop-shadow-[0_8px_12px_rgba(15,23,42,0.6)]"
-                style={{ animation: "nodePointer 6s ease-in-out infinite" }}
+                style={{ animation: "nodePointer 10s ease-in-out infinite" }}
               >
                 <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
                   <path
@@ -188,8 +192,37 @@ export const WorkflowAutomationMock = () => {
               </span>
               <span
                 className="pointer-events-none absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-300/70"
-                style={{ animation: "nodeClick 6s ease-in-out infinite" }}
+                style={{ animation: "nodeClick 10s ease-in-out infinite" }}
               />
+              <svg
+                className="pointer-events-none absolute left-1/2 top-[44%] h-[14%] w-6 -translate-x-1/2 text-blue-300/80"
+                viewBox="0 0 24 100"
+                aria-hidden="true"
+                style={{ animation: "nodeArrow 10s ease-in-out infinite" }}
+              >
+                <defs>
+                  <marker
+                    id="nodeArrowHead"
+                    markerWidth="6"
+                    markerHeight="6"
+                    refX="3"
+                    refY="3"
+                    orient="auto"
+                    markerUnits="strokeWidth"
+                  >
+                    <path d="M0,0 L6,3 L0,6 Z" fill="currentColor" />
+                  </marker>
+                </defs>
+                <line
+                  x1="12"
+                  y1="0"
+                  x2="12"
+                  y2="92"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  markerEnd="url(#nodeArrowHead)"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -211,8 +244,8 @@ export const WorkflowAutomationMock = () => {
           12% { opacity: 1; }
           45% { left: 50%; top: 46%; transform: translate(-50%, -50%) scale(1); opacity: 1; }
           60% { left: 50%; top: 46%; transform: translate(-50%, -50%) scale(0.95); opacity: 1; }
-          78% { left: 50%; top: 58%; transform: translate(-50%, -50%) scale(0.95); opacity: 1; }
-          100% { left: 50%; top: 58%; transform: translate(-50%, -50%) scale(0.95); opacity: 0; }
+          78% { left: 50%; top: 56%; transform: translate(-50%, -50%) scale(0.95); opacity: 1; }
+          100% { left: 50%; top: 56%; transform: translate(-50%, -50%) scale(0.95); opacity: 0; }
         }
         @keyframes nodeHover {
           0% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
@@ -228,6 +261,12 @@ export const WorkflowAutomationMock = () => {
           68% { opacity: 1; transform: translate(-50%, 50%) scale(1); }
           100% { opacity: 0; transform: translate(-50%, 50%) scale(0.6); }
         }
+        @keyframes nodeFocusDotAction {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+          76% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+          80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
         @keyframes nodeHoverAction {
           0% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
           76% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
@@ -239,7 +278,15 @@ export const WorkflowAutomationMock = () => {
           48% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
           54% { left: 50%; top: 46%; opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
           66% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
-          100% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
+          86% { left: 50%; top: 56%; opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
+          92% { left: 50%; top: 56%; opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+          100% { left: 50%; top: 56%; opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
+        }
+        @keyframes nodeArrow {
+          0% { opacity: 0; }
+          86% { opacity: 0; }
+          87% { opacity: 1; }
+          100% { opacity: 1; }
         }`}
       </style>
     </div>
