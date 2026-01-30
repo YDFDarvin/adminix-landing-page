@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import adminixLogo from "@/assets/adminix-logo-full-text-light.svg";
 
 export const Logo = () => {
   return (
-    <a
-      href="/"
+    <Link
+      to="/"
       className="relative text-blue-700 content-center items-center box-border caret-transparent gap-x-2 flex shrink-0 h-min justify-start gap-y-2 w-min"
     >
       <img
@@ -16,7 +17,7 @@ export const Logo = () => {
           Adminix
         </h4>
       </div>
-    </a>
+    </Link>
   );
 };
 
