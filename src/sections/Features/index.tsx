@@ -24,7 +24,7 @@ export const Features = () => {
           <FeatureGrid />
           <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full md:grid md:grid-cols-2 md:gap-5 lg:flex lg:flex-row">
             <div className="box-border caret-transparent contents">
-              <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:grow md:w-px">
+              <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:w-full lg:basis-0 lg:grow lg:w-px">
                 <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-5 flex flex-col h-min justify-start gap-y-5 w-full pt-4 pb-6 px-4 rounded-[20px]">
                   <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-[336px] justify-center gap-y-2.5 w-full overflow-hidden rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:border-neutral-200 after:rounded-[10px] after:border-separate after:border-solid after:left-0 after:top-0 after:font-sans_serif">
                     <div className="absolute box-border caret-transparent shrink-0 z-[1] overflow-hidden inset-0">
@@ -47,7 +47,7 @@ export const Features = () => {
               </div>
             </div>
             <div className="box-border caret-transparent contents">
-              <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:grow md:w-px">
+              <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:w-full lg:basis-0 lg:grow lg:w-px">
                 <div className="relative content-center items-center bg-white shadow-[rgba(0,0,0,0.03)_0px_1px_20px_0px] box-border caret-transparent gap-x-5 flex flex-col h-min justify-start gap-y-5 w-full pt-4 pb-6 px-4 rounded-[20px]">
                   <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-[336px] justify-center gap-y-2.5 w-full overflow-hidden rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:border-neutral-200 after:rounded-[10px] after:border-separate after:border-solid after:left-0 after:top-0 after:font-sans_serif">
                     <div className="absolute box-border caret-transparent shrink-0 z-[1] overflow-hidden inset-0">
