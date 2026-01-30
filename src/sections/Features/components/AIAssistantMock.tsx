@@ -46,7 +46,8 @@ export const AIAssistantMock = () => {
             </div>
             <div className="absolute inset-0 flex items-start justify-end">
               <div className="max-w-[85%] rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.35)] animate-[assistantSlideIn_4.2s_ease-in-out_infinite]">
-                Great -- I can assemble a dashboard layout and data schema for you. Want a CRM or\n                analytics view?
+                Great -- I can assemble a dashboard layout and data schema for you. Want a CRM or
+                analytics view?
               </div>
             </div>
           </div>
@@ -58,17 +59,17 @@ export const AIAssistantMock = () => {
           </div>
           <div className="relative rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white">
             Build a CRM dashboard
-            <span className="pointer-events-none absolute -left-10 -top-6 h-5 w-5 text-slate-100/90 animate-[assistantPointer_4.2s_ease-in-out_infinite]">
+            <span className="pointer-events-none absolute left-1 top-1.5 h-5 w-5 text-slate-100 animate-[assistantPointer_4.2s_ease-in-out_infinite]">
               <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
                 <path
                   d="M6 3L18 15H12L9 21L6 3Z"
                   fill="currentColor"
-                  stroke="rgba(15,23,42,0.7)"
+                  stroke="rgba(15,23,42,0.8)"
                   strokeWidth="1.2"
                   strokeLinejoin="round"
                 />
               </svg>
-              <span className="absolute -right-1 -bottom-1 h-2 w-2 rounded-full bg-blue-400/80 animate-[assistantClick_4.2s_ease-in-out_infinite]" />
+              <span className="absolute -right-1 -bottom-1 h-2.5 w-2.5 rounded-full bg-blue-400/80 animate-[assistantClick_4.2s_ease-in-out_infinite]" />
             </span>
           </div>
         </div>
@@ -95,11 +96,11 @@ export const AIAssistantMock = () => {
           100% { opacity: 1; transform: translateX(0) scale(1); }
         }
         @keyframes assistantPointer {
-          0% { opacity: 0; transform: translate(-24px, -10px) scale(0.9); }
+          0% { opacity: 0; transform: translate(0, 0) scale(0.9); }
           15% { opacity: 1; }
-          45% { transform: translate(4px, 12px) scale(1); opacity: 1; }
-          60% { transform: translate(4px, 12px) scale(0.96); opacity: 1; }
-          100% { opacity: 0; transform: translate(4px, 12px) scale(0.96); }
+          45% { transform: translate(56px, 6px) scale(1); opacity: 1; }
+          60% { transform: translate(56px, 6px) scale(0.96); opacity: 1; }
+          100% { opacity: 0; transform: translate(56px, 6px) scale(0.96); }
         }
         @keyframes assistantClick {
           0%, 50% { transform: scale(0.2); opacity: 0; }
