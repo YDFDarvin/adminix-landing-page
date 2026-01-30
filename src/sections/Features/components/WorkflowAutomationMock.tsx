@@ -12,7 +12,7 @@ import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 
 export const WorkflowAutomationMock = () => {
   return (
-    <div className="relative h-full w-full select-none overflow-hidden rounded-[10px] bg-[#0c111b] text-[10px] text-slate-200">
+    <div className="relative h-full w-full select-none overflow-hidden rounded-[10px] bg-[#0c111b] text-[10px] text-slate-200 select-none">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),_transparent_60%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(15,23,42,0.35),_rgba(15,23,42,0.7))]" />
       <div className="relative flex h-full w-full">

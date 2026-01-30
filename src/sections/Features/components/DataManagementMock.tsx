@@ -1,6 +1,6 @@
 export const DataManagementMock = () => {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-[10px] bg-white">
+    <div className="relative h-full w-full select-none overflow-hidden rounded-[10px] bg-white">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(15,23,42,0.04),_transparent_40%)]" />
       <div className="relative flex h-full w-full flex-col text-[10px] text-slate-700">
         <div className="flex items-center border-b border-slate-200 bg-white">
