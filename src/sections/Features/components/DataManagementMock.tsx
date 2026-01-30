@@ -21,16 +21,16 @@ export const DataManagementMock = () => {
         </div>
         <div className="flex min-h-0 flex-1">
           <div className="flex w-[52%] flex-col border-r border-slate-200">
-            <div className="flex items-center justify-between px-4 py-2 text-[10px] font-semibold text-slate-400">
+            <div className="flex items-center justify-between px-[10.5px] py-[7px] text-[10px] font-semibold text-slate-400 sm:px-4 sm:py-2">
               TABLES
               <span className="text-base font-semibold text-slate-400">+</span>
             </div>
-            <div className="relative space-y-2 px-4 pb-3">
+            <div className="relative space-y-[7px] px-[10.5px] pb-[11px] sm:space-y-2 sm:px-4 sm:pb-3">
               <div
-                className="flex items-center justify-between rounded-[10px] border border-slate-200 bg-white px-3 py-2 text-[11px] font-semibold text-slate-700"
+                className="flex items-center justify-between rounded-[10px] border border-slate-200 bg-white px-[9px] py-[5.5px] text-[11px] font-semibold text-slate-700 sm:px-3 sm:py-2"
                 style={{ animation: "usersActive 7s ease-in-out infinite" }}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5 sm:gap-2">
                   <span
                     className="flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 text-slate-500"
                     style={{ animation: "usersIcon 7s ease-in-out infinite" }}
@@ -47,10 +47,10 @@ export const DataManagementMock = () => {
                 <span className="text-sm">›</span>
               </div>
               <div
-                className="flex items-center justify-between rounded-[10px] border border-slate-200 bg-white px-3 py-2 text-[11px] font-semibold text-slate-700"
+                className="flex items-center justify-between rounded-[10px] border border-slate-200 bg-white px-[9px] py-[5.5px] text-[11px] font-semibold text-slate-700 sm:px-3 sm:py-2"
                 style={{ animation: "productsActive 7s ease-in-out infinite" }}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5 sm:gap-2">
                   <span
                     className="flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 text-slate-500"
                     style={{ animation: "productsIcon 7s ease-in-out infinite" }}
@@ -66,8 +66,8 @@ export const DataManagementMock = () => {
                 </div>
                 <span className="text-sm">›</span>
               </div>
-              <div className="flex items-center justify-between rounded-[10px] border border-slate-200 bg-white px-3 py-2 text-[11px] font-semibold text-slate-700">
-                <div className="flex items-center gap-2">
+              <div className="flex items-center justify-between rounded-[10px] border border-slate-200 bg-white px-[9px] py-[5.5px] text-[11px] font-semibold text-slate-700 sm:px-3 sm:py-2">
+                <div className="flex items-center gap-2.5 sm:gap-2">
                   <span className="flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 text-slate-500">
                     <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
                       <path
@@ -105,13 +105,13 @@ export const DataManagementMock = () => {
                 />
               </span>
             </div>
-            <div className="flex items-center justify-between border-t border-slate-200 px-4 py-2 text-[10px] font-semibold text-slate-400">
+            <div className="flex items-center justify-between border-t border-slate-200 px-[10.5px] py-[7px] text-[10px] font-semibold text-slate-400 sm:px-4 sm:py-2">
               FIELDS
               <span className="rounded-md bg-blue-500 px-2 py-1 text-[10px] font-semibold text-white">
                 + Add
               </span>
             </div>
-            <div className="space-y-2 px-4 pb-4">
+            <div className="space-y-[7px] px-[10.5px] pb-[14px] sm:space-y-2 sm:px-4 sm:pb-4">
               {[
                 { title: "id", meta: "UUID • Primary key" },
                 { title: "email", meta: "Email • User email address" },
@@ -132,7 +132,14 @@ export const DataManagementMock = () => {
                       </span>
                     ) : null}
                   </div>
-                  <div className="text-[9px] text-slate-400">{field.meta}</div>
+                  {field.title === "id" ? (
+                    <div className="text-[9px] text-slate-400">
+                      <span className="sm:hidden">Primary key</span>
+                      <span className="hidden sm:inline">{field.meta}</span>
+                    </div>
+                  ) : (
+                    <div className="text-[9px] text-slate-400">{field.meta}</div>
+                  )}
                 </div>
               ))}
             </div>
