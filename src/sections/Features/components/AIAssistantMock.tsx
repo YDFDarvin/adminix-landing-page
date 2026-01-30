@@ -5,7 +5,7 @@ import ViewInArIcon from "@mui/icons-material/ViewInAr";
 
 export const AIAssistantMock = () => {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-[10px] bg-[#0f131b]">
+    <div className="relative h-full w-full select-none overflow-hidden rounded-[10px] bg-[#0f131b]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(48,70,120,0.18),_transparent_55%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_rgba(36,48,86,0.4),_transparent_55%)]" />
       <div className="relative flex h-full w-full flex-col gap-3 p-4 text-xs text-slate-200">
@@ -35,21 +35,26 @@ export const AIAssistantMock = () => {
           </div>
         </div>
         <div className="-mx-4 border-t border-white/5" />
-        <div className="relative flex gap-3">
-          <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/80 text-white">
-            <AutoAwesomeIcon fontSize="inherit" />
-          </span>
-          <div className="relative flex-1">
-            <div className="rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100 animate-[assistantFade_4.2s_ease-in-out_infinite]">
+        <div className="flex flex-col gap-3">
+          <div className="flex gap-3">
+            <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/80 text-white">
+              <AutoAwesomeIcon fontSize="inherit" />
+            </span>
+            <div className="flex-1 rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100">
               Hi! I can help you generate applications and workflows. Describe what you want to build,
               and I'll create it for you.
             </div>
-            <div className="absolute inset-0 flex items-start justify-end">
-              <div className="max-w-[85%] rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.35)] animate-[assistantSlideIn_4.2s_ease-in-out_infinite]">
-                Great -- I can assemble a dashboard layout and data schema for you. Want a CRM or
-                analytics view?
-              </div>
+          </div>
+          <div className="flex items-start justify-end gap-2">
+            <div
+              className="max-w-[75%] translate-x-2 rounded-xl border border-blue-400/40 bg-blue-500/80 px-3 py-2.5 text-[11px] leading-4 text-white opacity-0 shadow-[0_8px_24px_rgba(59,130,246,0.35)]"
+              style={{ animation: "assistantSlideIn 4.2s ease-in-out infinite" }}
+            >
+              Build a CRM dashboard.
             </div>
+            <span className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[9px] font-semibold text-slate-200">
+              You
+            </span>
           </div>
         </div>
         <div className="relative mt-1 space-y-1.5">
@@ -57,9 +62,15 @@ export const AIAssistantMock = () => {
             <LightbulbOutlinedIcon className="text-[3px]" />
             Try these:
           </div>
-          <div className="relative rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white">
+          <div
+            className="relative rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white"
+            style={{ animation: "assistantTip 4.2s ease-in-out infinite" }}
+          >
             Build a CRM dashboard
-            <span className="pointer-events-none absolute left-1 top-1.5 h-5 w-5 text-slate-100 animate-[assistantPointer_4.2s_ease-in-out_infinite]">
+            <span
+              className="pointer-events-none absolute left-1 top-1.5 h-5 w-5 text-slate-100"
+              style={{ animation: "assistantPointer 4.2s ease-in-out infinite" }}
+            >
               <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
                 <path
                   d="M6 3L18 15H12L9 21L6 3Z"
@@ -69,7 +80,10 @@ export const AIAssistantMock = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span className="absolute -right-1 -bottom-1 h-2.5 w-2.5 rounded-full bg-blue-400/80 animate-[assistantClick_4.2s_ease-in-out_infinite]" />
+              <span
+                className="absolute -right-1 -bottom-1 h-2.5 w-2.5 rounded-full bg-blue-400/80"
+                style={{ animation: "assistantClick 4.2s ease-in-out infinite" }}
+              />
             </span>
           </div>
         </div>
@@ -83,17 +97,17 @@ export const AIAssistantMock = () => {
         </div>
       </div>
       <style>
-        {`@keyframes assistantFade {
-          0% { opacity: 1; transform: translateX(0) scale(1); }
-          40% { opacity: 1; transform: translateX(0) scale(1); }
-          55% { opacity: 0; transform: translateX(-8px) scale(0.96); }
-          100% { opacity: 0; transform: translateX(-8px) scale(0.96); }
-        }
-        @keyframes assistantSlideIn {
+        {`@keyframes assistantSlideIn {
           0% { opacity: 0; transform: translateX(28px) scale(0.98); }
-          45% { opacity: 0; transform: translateX(28px) scale(0.98); }
+          55% { opacity: 0; transform: translateX(28px) scale(0.98); }
           70% { opacity: 1; transform: translateX(0) scale(1); }
           100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        @keyframes assistantTip {
+          0% { opacity: 1; transform: translateY(0); }
+          50% { opacity: 1; transform: translateY(0); }
+          62% { opacity: 0; transform: translateY(4px); }
+          100% { opacity: 0; transform: translateY(4px); }
         }
         @keyframes assistantPointer {
           0% { opacity: 0; transform: translate(0, 0) scale(0.9); }
@@ -112,4 +126,3 @@ export const AIAssistantMock = () => {
     </div>
   );
 };
-
