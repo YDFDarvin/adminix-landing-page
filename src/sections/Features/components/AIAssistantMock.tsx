@@ -48,7 +48,7 @@ export const AIAssistantMock = () => {
           <div className="flex items-start justify-end gap-2">
             <div
               className="max-w-[75%] translate-x-2 rounded-xl border border-blue-400/40 bg-blue-500/80 px-3 py-2.5 text-[11px] leading-4 text-white opacity-0 shadow-[0_8px_24px_rgba(59,130,246,0.35)]"
-              style={{ animation: "assistantSlideIn 4.2s ease-in-out infinite" }}
+              style={{ animation: "assistantSlideIn 6s ease-in-out infinite" }}
             >
               Build a CRM dashboard.
             </div>
@@ -57,19 +57,21 @@ export const AIAssistantMock = () => {
             </span>
           </div>
         </div>
-        <div className="relative mt-1 space-y-1.5">
+        <div
+          className="relative mt-1 space-y-1.5"
+          style={{ animation: "assistantTip 6s ease-in-out infinite" }}
+        >
           <div className="flex items-center gap-2 text-[10.5px] font-medium text-slate-300">
             <LightbulbOutlinedIcon className="text-[3px]" />
             Try these:
           </div>
           <div
             className="relative rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white"
-            style={{ animation: "assistantTip 4.2s ease-in-out infinite" }}
           >
             Build a CRM dashboard
             <span
               className="pointer-events-none absolute left-1 top-1.5 h-5 w-5 text-slate-100"
-              style={{ animation: "assistantPointer 4.2s ease-in-out infinite" }}
+              style={{ animation: "assistantPointer 6s ease-in-out infinite" }}
             >
               <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
                 <path
@@ -82,7 +84,7 @@ export const AIAssistantMock = () => {
               </svg>
               <span
                 className="absolute -right-1 -bottom-1 h-2.5 w-2.5 rounded-full bg-blue-400/80"
-                style={{ animation: "assistantClick 4.2s ease-in-out infinite" }}
+                style={{ animation: "assistantClick 6s ease-in-out infinite" }}
               />
             </span>
           </div>
@@ -99,27 +101,27 @@ export const AIAssistantMock = () => {
       <style>
         {`@keyframes assistantSlideIn {
           0% { opacity: 0; transform: translateX(28px) scale(0.98); }
-          55% { opacity: 0; transform: translateX(28px) scale(0.98); }
-          70% { opacity: 1; transform: translateX(0) scale(1); }
+          64% { opacity: 0; transform: translateX(28px) scale(0.98); }
+          80% { opacity: 1; transform: translateX(0) scale(1); }
           100% { opacity: 1; transform: translateX(0) scale(1); }
         }
         @keyframes assistantTip {
           0% { opacity: 1; transform: translateY(0); }
-          50% { opacity: 1; transform: translateY(0); }
-          62% { opacity: 0; transform: translateY(4px); }
+          48% { opacity: 1; transform: translateY(0); }
+          58% { opacity: 0; transform: translateY(4px); }
           100% { opacity: 0; transform: translateY(4px); }
         }
         @keyframes assistantPointer {
-          0% { opacity: 0; transform: translate(0, 0) scale(0.9); }
-          15% { opacity: 1; }
-          45% { transform: translate(56px, 6px) scale(1); opacity: 1; }
-          60% { transform: translate(56px, 6px) scale(0.96); opacity: 1; }
-          100% { opacity: 0; transform: translate(56px, 6px) scale(0.96); }
+          0% { opacity: 0; transform: translate(-8px, -6px) scale(0.9); }
+          12% { opacity: 1; }
+          42% { transform: translate(46px, 4px) scale(1); opacity: 1; }
+          55% { transform: translate(46px, 4px) scale(0.96); opacity: 1; }
+          100% { opacity: 0; transform: translate(46px, 4px) scale(0.96); }
         }
         @keyframes assistantClick {
-          0%, 50% { transform: scale(0.2); opacity: 0; }
-          58% { transform: scale(1); opacity: 0.8; }
-          75% { transform: scale(1.6); opacity: 0; }
+          0%, 46% { transform: scale(0.2); opacity: 0; }
+          54% { transform: scale(1); opacity: 0.85; }
+          66% { transform: scale(1.6); opacity: 0; }
           100% { transform: scale(0.2); opacity: 0; }
         }`}
       </style>
