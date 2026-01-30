@@ -107,7 +107,10 @@ export const WorkflowAutomationMock = () => {
           <div className="relative flex-1">
             <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(148,163,184,0.08)_1px,_transparent_1px),_linear-gradient(0deg,_rgba(148,163,184,0.08)_1px,_transparent_1px)] bg-[size:18px_18px] bg-[position:9px_9px]" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 py-6">
-              <div className="relative w-[72%] aspect-[3/2] overflow-hidden rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]">
+              <div
+                className="relative w-[72%] aspect-[3/2] overflow-visible rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]"
+                style={{ animation: "nodeHover 6s ease-in-out infinite" }}
+              >
                 <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#22C55E]" />
                 <div className="flex items-center gap-3 pt-2">
                   <span className="flex h-[44px] w-[44px] items-center justify-center rounded-[8px] bg-[#10B981] text-white">
@@ -129,8 +132,15 @@ export const WorkflowAutomationMock = () => {
                 <div className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.05em] text-slate-500">
                   TRIGGER
                 </div>
+                <span
+                  className="pointer-events-none absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 translate-y-1/2 rounded-full bg-emerald-400/50"
+                  style={{ animation: "nodeFocusDot 6s ease-in-out infinite" }}
+                />
               </div>
-              <div className="relative w-[72%] aspect-[3/2] overflow-hidden rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]">
+              <div
+                className="relative w-[72%] aspect-[3/2] overflow-hidden rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]"
+                style={{ animation: "nodeHoverAction 6s ease-in-out infinite" }}
+              >
                 <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#3B82F6]" />
                 <div className="flex items-center gap-3 pt-2">
                   <span className="flex h-[44px] w-[44px] items-center justify-center rounded-[8px] bg-[#3B82F6] text-white">
@@ -162,6 +172,24 @@ export const WorkflowAutomationMock = () => {
                   ACTION
                 </div>
               </div>
+              <span
+                className="pointer-events-none absolute h-4 w-4 text-slate-100 drop-shadow-[0_8px_12px_rgba(15,23,42,0.6)]"
+                style={{ animation: "nodePointer 6s ease-in-out infinite" }}
+              >
+                <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden="true">
+                  <path
+                    d="M6 3L18 15H12L9 21L6 3Z"
+                    fill="currentColor"
+                    stroke="rgba(15,23,42,0.7)"
+                    strokeWidth="1.2"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <span
+                className="pointer-events-none absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-300/70"
+                style={{ animation: "nodeClick 6s ease-in-out infinite" }}
+              />
             </div>
           </div>
         </div>
@@ -177,6 +205,41 @@ export const WorkflowAutomationMock = () => {
           55% { transform: translateX(-50%) scale(1); opacity: 1; }
           70% { transform: translateX(-50%) scale(1.6); opacity: 0; }
           100% { transform: translateX(-50%) scale(0.6); opacity: 0; }
+        }
+        @keyframes nodePointer {
+          0% { left: 8px; top: 54%; transform: translate(0, -50%) scale(0.75); opacity: 0; }
+          12% { opacity: 1; }
+          45% { left: 50%; top: 46%; transform: translate(-50%, -50%) scale(1); opacity: 1; }
+          60% { left: 50%; top: 46%; transform: translate(-50%, -50%) scale(0.95); opacity: 1; }
+          78% { left: 50%; top: 58%; transform: translate(-50%, -50%) scale(0.95); opacity: 1; }
+          100% { left: 50%; top: 58%; transform: translate(-50%, -50%) scale(0.95); opacity: 0; }
+        }
+        @keyframes nodeHover {
+          0% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
+          38% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
+          50% { border-color: rgba(34,197,94,0.65); box-shadow: 0 18px 38px rgba(34,197,94,0.22); }
+          65% { border-color: rgba(34,197,94,0.65); box-shadow: 0 18px 38px rgba(34,197,94,0.22); }
+          100% { border-color: rgba(34,197,94,0.65); box-shadow: 0 18px 38px rgba(34,197,94,0.22); }
+        }
+        @keyframes nodeFocusDot {
+          0% { opacity: 0; transform: translate(-50%, 50%) scale(0.6); }
+          40% { opacity: 0; transform: translate(-50%, 50%) scale(0.6); }
+          52% { opacity: 1; transform: translate(-50%, 50%) scale(1); }
+          68% { opacity: 1; transform: translate(-50%, 50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, 50%) scale(0.6); }
+        }
+        @keyframes nodeHoverAction {
+          0% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
+          76% { border-color: #1E293B; box-shadow: 0 14px 30px rgba(15,23,42,0.5); }
+          79% { border-color: rgba(59,130,246,0.7); box-shadow: 0 18px 38px rgba(59,130,246,0.22); }
+          100% { border-color: rgba(59,130,246,0.7); box-shadow: 0 18px 38px rgba(59,130,246,0.22); }
+        }
+        @keyframes nodeClick {
+          0% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
+          48% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(0.4); }
+          54% { left: 50%; top: 46%; opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+          66% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
+          100% { left: 50%; top: 46%; opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
         }`}
       </style>
     </div>
