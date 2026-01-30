@@ -581,6 +581,14 @@
     }
   }
 
+  @media (hover: none) and (pointer: coarse) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(24px);
