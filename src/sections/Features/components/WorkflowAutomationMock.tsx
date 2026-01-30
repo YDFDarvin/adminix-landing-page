@@ -54,7 +54,7 @@ export const WorkflowAutomationMock = () => {
             <div className="mt-2 space-y-2">
               {[
                 { label: "delete - entity", Icon: DeleteOutlineIcon },
-                { label: "manual", Icon: EditOutlinedIcon },
+                { label: "form submit", Icon: EditOutlinedIcon },
                 { label: "update - entity", Icon: LoopOutlinedIcon },
                 { label: "get - entity", Icon: DownloadOutlinedIcon },
                 { label: "http - in", Icon: HttpOutlinedIcon },
@@ -81,7 +81,7 @@ export const WorkflowAutomationMock = () => {
           </div>
         </div>
         <div className="flex min-h-0 flex-1 flex-col">
-          <div className="flex h-10 items-center border-b border-white/10 bg-[#0f1422] pr-0 text-[10px] font-medium text-slate-300">
+          <div className="flex h-12 items-center border-b border-white/10 bg-[#0f1422] pr-0 text-[10px] font-medium text-slate-300">
             <div className="flex h-full flex-1 overflow-hidden border border-white/10 bg-[#111827]">
               {[
                 { label: "UI", active: false },
@@ -106,56 +106,61 @@ export const WorkflowAutomationMock = () => {
           </div>
           <div className="relative flex-1">
             <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(148,163,184,0.08)_1px,_transparent_1px),_linear-gradient(0deg,_rgba(148,163,184,0.08)_1px,_transparent_1px)] bg-[size:18px_18px] bg-[position:9px_9px]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 py-6">
-              <div className="relative w-[58%] rounded-[12px] border border-white/10 bg-[#111827] px-3 py-2 shadow-[0_10px_26px_rgba(15,23,42,0.6)]">
-                <div className="flex items-center gap-2 text-[9px] font-semibold text-slate-100">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-md bg-emerald-500/20 text-emerald-200">
-                    !
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 py-6">
+              <div className="relative w-[72%] aspect-[3/2] overflow-hidden rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]">
+                <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#22C55E]" />
+                <div className="flex items-center gap-3 pt-2">
+                  <span className="flex h-[44px] w-[44px] items-center justify-center rounded-[8px] bg-[#10B981] text-white">
+                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+                      <path
+                        d="M13 3 4 14h7l-1 7 9-11h-7l1-7Z"
+                        fill="currentColor"
+                      />
+                    </svg>
                   </span>
-                  Form Submitted
-                </div>
-                <div className="mt-1 text-[8px] text-slate-400">Trigger when new lead arrives</div>
-              </div>
-              <div className="h-5 w-px bg-blue-400/40" />
-              <div
-                className="relative w-[58%] rounded-[12px] border border-blue-400/30 bg-[#0f172a] px-3 py-2 shadow-[0_12px_28px_rgba(59,130,246,0.22)]"
-                style={{ animation: "workflowGlow 6s ease-in-out infinite" }}
-              >
-                <div className="flex items-center gap-2 text-[9px] font-semibold text-slate-100">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-md bg-blue-500/30 text-blue-200">
-                    +
-                  </span>
-                  Create Record
-                </div>
-                <div className="mt-1 text-[8px] text-slate-400">Add lead to database</div>
-              </div>
-              <div className="h-5 w-px bg-blue-400/40" />
-              <div className="relative w-[62%] rounded-[12px] border border-amber-400/30 bg-[#111827] px-3 py-2 shadow-[0_10px_26px_rgba(15,23,42,0.5)]">
-                <div className="flex items-center gap-2 text-[9px] font-semibold text-slate-100">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-md bg-amber-500/25 text-amber-200">
-                    ?
-                  </span>
-                  Check Score
-                </div>
-                <div className="mt-1 text-[8px] text-slate-400">Lead score &gt; 50?</div>
-              </div>
-              <div className="relative mt-2 flex w-full items-center justify-between px-6">
-                <div className="flex w-[45%] flex-col items-center gap-2">
-                  <span className="text-[8px] font-semibold text-slate-400">No</span>
-                  <div className="w-full rounded-[12px] border border-white/10 bg-[#0f172a] px-3 py-2 text-[9px] font-semibold text-slate-100">
-                    Webhook
+                  <div>
+                    <div className="text-[12px] font-semibold text-white">Form Submitted</div>
+                    <div className="mt-0.5 text-[10px] leading-[1.4] text-slate-400">
+                      When a new lead form is submitted
+                    </div>
                   </div>
                 </div>
-                <div className="flex w-[45%] flex-col items-center gap-2">
-                  <span className="text-[8px] font-semibold text-slate-400">Yes</span>
-                  <div className="w-full rounded-[12px] border border-white/10 bg-[#0f172a] px-3 py-2 text-[9px] font-semibold text-slate-100">
-                    Send Email
+                <div className="absolute left-4 right-4 bottom-7 border-t border-[#1E293B]" />
+                <div className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.05em] text-slate-500">
+                  TRIGGER
+                </div>
+              </div>
+              <div className="relative w-[72%] aspect-[3/2] overflow-hidden rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]">
+                <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#3B82F6]" />
+                <div className="flex items-center gap-3 pt-2">
+                  <span className="flex h-[44px] w-[44px] items-center justify-center rounded-[8px] bg-[#3B82F6] text-white">
+                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+                      <ellipse cx="12" cy="6" rx="6.5" ry="3" fill="currentColor" />
+                      <path
+                        d="M5.5 6v6c0 1.7 2.9 3 6.5 3s6.5-1.3 6.5-3V6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                      />
+                      <path
+                        d="M5.5 12v6c0 1.7 2.9 3 6.5 3s6.5-1.3 6.5-3v-6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div className="text-[12px] font-semibold text-white">Create Entity</div>
+                    <div className="mt-0.5 text-[10px] leading-[1.4] text-slate-400">
+                      Add lead to database
+                    </div>
                   </div>
                 </div>
-                <span
-                  className="pointer-events-none absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-blue-500/70 shadow-[0_0_0_6px_rgba(59,130,246,0.2)]"
-                  style={{ animation: "workflowDot 6s ease-in-out infinite" }}
-                />
+                <div className="absolute left-4 right-4 bottom-7 border-t border-[#1E293B]" />
+                <div className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.05em] text-slate-500">
+                  ACTION
+                </div>
               </div>
             </div>
           </div>
