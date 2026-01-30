@@ -8,15 +8,15 @@ export const AIAssistantMock = () => {
     <div className="relative h-full w-full select-none overflow-hidden rounded-[10px] bg-[#0f131b]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(48,70,120,0.18),_transparent_55%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_rgba(36,48,86,0.4),_transparent_55%)]" />
-      <div className="relative flex h-full w-full flex-col gap-3 p-4 text-xs text-slate-200">
-        <div className="flex gap-2 rounded-[14px] border border-white/10 bg-[#121725] p-1.5">
-          <div className="flex flex-1 items-center gap-2 rounded-[12px] bg-[#0f1422] px-3 py-2 text-[11px] font-medium text-slate-300">
+      <div className="relative flex h-full w-full flex-col gap-2 p-3 text-[11px] text-slate-200 sm:gap-3 sm:p-4 sm:text-xs">
+        <div className="flex gap-2 rounded-[14px] border border-white/10 bg-[#121725] p-1 sm:p-1.5">
+          <div className="flex flex-1 items-center gap-2 rounded-[12px] bg-[#0f1422] px-2 py-1.5 text-[10px] font-medium text-slate-300 sm:px-3 sm:py-2 sm:text-[11px]">
             <span className="flex h-6 w-6 items-center justify-center rounded-[10px] bg-white/5 text-slate-300">
               <ViewInArIcon fontSize="inherit" />
             </span>
             Components
           </div>
-          <div className="flex flex-1 items-center gap-2 rounded-[12px] bg-gradient-to-r from-blue-500 to-blue-400 px-3 py-2 text-[11px] font-semibold text-white shadow-[0_6px_18px_rgba(59,130,246,0.35)]">
+          <div className="flex flex-1 items-center gap-2 rounded-[12px] bg-gradient-to-r from-blue-500 to-blue-400 px-2 py-1.5 text-[10px] font-semibold text-white shadow-[0_6px_18px_rgba(59,130,246,0.35)] sm:px-3 sm:py-2 sm:text-[11px]">
             <span className="flex h-6 w-6 items-center justify-center rounded-[10px] bg-white/15 text-white">
               <AutoAwesomeIcon fontSize="inherit" />
             </span>
@@ -28,8 +28,8 @@ export const AIAssistantMock = () => {
             <AutoAwesomeIcon fontSize="inherit" />
           </span>
           <div>
-            <p className="text-[12px] font-semibold text-white">AI Assistant</p>
-            <p className="text-[10px] text-slate-500">
+            <p className="text-[11px] font-semibold text-white sm:text-[12px]">AI Assistant</p>
+            <p className="text-[9px] text-slate-500 sm:text-[10px]">
               Describe what you want to build
             </p>
           </div>
@@ -40,19 +40,19 @@ export const AIAssistantMock = () => {
             <span className="mt-1 flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500/80 text-white">
               <AutoAwesomeIcon fontSize="inherit" />
             </span>
-            <div className="flex-1 rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-[11px] leading-4 text-slate-100">
+            <div className="flex-1 rounded-xl border border-white/5 bg-white/5 px-2.5 py-2 text-[10px] leading-4 text-slate-100 sm:px-3 sm:py-2.5 sm:text-[11px]">
               Hi! I can help you generate applications and workflows. Describe what you want to build,
               and I'll create it for you.
             </div>
           </div>
           <div className="flex items-start justify-end gap-2">
             <div
-              className="max-w-[75%] translate-x-2 rounded-xl border border-blue-400/40 bg-blue-500/80 px-3 py-2.5 text-[11px] leading-4 text-white opacity-0 shadow-[0_8px_24px_rgba(59,130,246,0.35)]"
+              className="max-w-[75%] translate-x-2 rounded-xl border border-blue-400/40 bg-blue-500/80 px-2.5 py-2 text-[10px] leading-4 text-white opacity-0 shadow-[0_8px_24px_rgba(59,130,246,0.35)] sm:px-3 sm:py-2.5 sm:text-[11px]"
               style={{ animation: "assistantSlideIn 6s ease-in-out infinite" }}
             >
               Build a CRM dashboard.
             </div>
-            <span className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[9px] font-semibold text-slate-200">
+            <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-white/10 text-[8px] font-semibold text-slate-200 sm:h-7 sm:w-7 sm:text-[9px]">
               You
             </span>
           </div>
@@ -61,12 +61,12 @@ export const AIAssistantMock = () => {
           className="relative mt-1 space-y-1.5"
           style={{ animation: "assistantTip 6s ease-in-out infinite" }}
         >
-          <div className="flex items-center gap-2 text-[10.5px] font-medium text-slate-300">
+          <div className="flex items-center gap-2 text-[9.5px] font-medium text-slate-300 sm:text-[10.5px]">
             <LightbulbOutlinedIcon className="text-[3px]" />
             Try these:
           </div>
           <div
-            className="relative rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-[11px] font-semibold text-white"
+            className="relative rounded-[12px] border border-white/10 bg-white/5 px-2.5 py-2 text-[10px] font-semibold text-white sm:px-3.5 sm:py-2.5 sm:text-[11px]"
           >
             Build a CRM dashboard
             <span
@@ -90,10 +90,10 @@ export const AIAssistantMock = () => {
           </div>
         </div>
         <div className="mt-auto flex items-center gap-2">
-          <div className="flex-1 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[10px] text-slate-400">
+          <div className="flex-1 rounded-xl border border-white/10 bg-white/5 px-2.5 py-2 text-[9px] text-slate-400 sm:px-3 sm:py-2.5 sm:text-[10px]">
             Describe the application/workflow...
           </div>
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500 text-white">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-500 text-white sm:h-9 sm:w-9">
             <SendIcon fontSize="inherit" />
           </div>
         </div>
