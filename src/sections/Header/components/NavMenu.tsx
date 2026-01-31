@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const NavMenu = () => {
@@ -23,6 +23,79 @@ export const NavMenu = () => {
 
   return (
     <nav className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min">
+      <div className="relative box-border caret-transparent shrink-0">
+        <button
+          id="use-cases-button"
+          aria-controls={isUseCaseOpen ? "use-cases-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={isUseCaseOpen ? "true" : undefined}
+          onClick={handleUseCaseOpen}
+          className="relative text-blue-700 content-center items-center box-border caret-transparent gap-x-2.5 flex h-10 justify-center gap-y-2.5 w-min px-3 py-2.5 rounded-lg bg-transparent hover:bg-transparent"
+        >
+          <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
+            <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
+              Use Cases
+            </p>
+          </div>
+          <KeyboardArrowDownIcon
+            fontSize="small"
+            className={`text-zinc-600/80 transition-transform duration-300 ease-out ${
+              isUseCaseOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        <Menu
+          id="use-cases-menu"
+          anchorEl={useCaseAnchor}
+          open={isUseCaseOpen}
+          onClose={handleUseCaseClose}
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+          transformOrigin={{ vertical: "top", horizontal: "left" }}
+          disableAutoFocusItem
+          MenuListProps={{
+            "aria-labelledby": "use-cases-button",
+            sx: {
+              padding: 0,
+            },
+          }}
+          PaperProps={{
+            sx: {
+              borderRadius: "12px",
+              boxShadow: "rgba(0,0,0,0.08) 0px 10px 24px",
+              padding: 0,
+              marginTop: "8px",
+              overflow: "hidden",
+            },
+          }}
+        >
+          {[
+            { label: "Insurance", href: "/use-cases/insurance" },
+            { label: "Healthcare", href: "/use-cases/healthcare" },
+            { label: "HR", href: "/use-cases/hr" },
+            { label: "Real Estate", href: "/use-cases/real-estate" },
+            { label: "E-commerce", href: "/use-cases/e-commerce" },
+          ].map((item) => (
+            <MenuItem
+              key={item.href}
+              component={Link}
+              to={item.href}
+              onClick={handleUseCaseClose}
+              sx={{
+                fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif",
+                fontSize: "15px",
+                fontWeight: 500,
+                color: "rgba(82, 82, 91, 0.9)",
+                padding: "10px 16px",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.04)",
+                },
+              }}
+            >
+              {item.label}
+            </MenuItem>
+          ))}
+        </Menu>
+      </div>
       <div className="relative box-border caret-transparent shrink-0">
         <Link
           to="/#features"
@@ -61,90 +134,6 @@ export const NavMenu = () => {
             </p>
           </div>
         </Link>
-      </div>
-      <div className="relative box-border caret-transparent shrink-0">
-        <Button
-          id="use-cases-button"
-          aria-controls={isUseCaseOpen ? "use-cases-menu" : undefined}
-          aria-haspopup="true"
-          aria-expanded={isUseCaseOpen ? "true" : undefined}
-          onClick={handleUseCaseOpen}
-          disableRipple
-          disableFocusRipple
-          endIcon={<KeyboardArrowDownIcon fontSize="small" />}
-          className="relative text-blue-700 content-center items-center box-border caret-transparent gap-x-2.5 flex h-10 justify-center gap-y-2.5 w-min px-3 py-2.5 rounded-lg"
-          sx={{
-            color: "rgba(82, 82, 91, 0.8)",
-            textTransform: "none",
-            fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif",
-            fontSize: "16px",
-            fontWeight: 500,
-            letterSpacing: "-0.32px",
-            lineHeight: "22.4px",
-            padding: 0,
-            minWidth: "auto",
-            minHeight: "40px",
-            height: "40px",
-            boxSizing: "border-box",
-            borderRadius: "8px",
-            "& .MuiButton-endIcon": {
-              marginLeft: "6px",
-              marginRight: 0,
-            },
-            "&:hover": {
-              backgroundColor: "rgba(0, 0, 0, 0.04)",
-            },
-            "&.Mui-focusVisible": {
-              backgroundColor: "rgba(0, 0, 0, 0.04)",
-            },
-          }}
-        >
-          Use Cases
-        </Button>
-        <Menu
-          id="use-cases-menu"
-          anchorEl={useCaseAnchor}
-          open={isUseCaseOpen}
-          onClose={handleUseCaseClose}
-          MenuListProps={{
-            "aria-labelledby": "use-cases-button",
-          }}
-          PaperProps={{
-            sx: {
-              borderRadius: "12px",
-              boxShadow: "rgba(0,0,0,0.08) 0px 10px 24px",
-              padding: "4px 0",
-              marginTop: "8px",
-            },
-          }}
-        >
-          {[
-            { label: "Insurance", href: "/use-cases/insurance" },
-            { label: "Healthcare", href: "/use-cases/healthcare" },
-            { label: "HR", href: "/use-cases/hr" },
-            { label: "Real Estate", href: "/use-cases/real-estate" },
-            { label: "E-commerce", href: "/use-cases/e-commerce" },
-          ].map((item) => (
-            <MenuItem
-              key={item.href}
-              component={Link}
-              to={item.href}
-              onClick={handleUseCaseClose}
-              sx={{
-                fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif",
-                fontSize: "15px",
-                fontWeight: 500,
-                color: "rgba(82, 82, 91, 0.9)",
-                padding: "10px 16px",
-                "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 0.04)",
-                },
-              }}
-            >
-              {item.label}
-            </MenuItem>
-          ))}
-        </Menu>
       </div>
       <div className="relative box-border caret-transparent shrink-0">
         <Link

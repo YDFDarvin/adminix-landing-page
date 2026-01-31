@@ -48,27 +48,6 @@ export const MobileMenu = () => {
       {isOpen && (
         <div className="fixed inset-0 bg-white z-50 top-[60px]">
           <nav className="flex flex-col gap-2 p-6">
-            <Link
-              to="/#features"
-              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={handleNavClick("features")}
-            >
-              Features
-            </Link>
-            <Link
-              to="/#benefits"
-              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={handleNavClick("benefits")}
-            >
-              Benefits
-            </Link>
-            <Link
-              to="/#integrations"
-              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-              onClick={handleNavClick("integrations")}
-            >
-              Integrations
-            </Link>
             <div className="pt-2">
               <button
                 type="button"
@@ -107,6 +86,27 @@ export const MobileMenu = () => {
                 </div>
               </Collapse>
             </div>
+            <Link
+              to="/#features"
+              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
+              onClick={handleNavClick("features")}
+            >
+              Features
+            </Link>
+            <Link
+              to="/#benefits"
+              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
+              onClick={handleNavClick("benefits")}
+            >
+              Benefits
+            </Link>
+            <Link
+              to="/#integrations"
+              className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
+              onClick={handleNavClick("integrations")}
+            >
+              Integrations
+            </Link>
             <Link
               to="/#pricing"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
