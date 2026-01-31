@@ -52,6 +52,7 @@ export const NavMenu = () => {
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
           transformOrigin={{ vertical: "top", horizontal: "left" }}
           disableAutoFocusItem
+          disableScrollLock
           MenuListProps={{
             "aria-labelledby": "use-cases-button",
             sx: {
