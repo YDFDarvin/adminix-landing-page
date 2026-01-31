@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SIGNUP_URL } from "@/constants/urls";
 
 export type PricingCardProps = {
   planName: string;
@@ -81,10 +82,11 @@ export const PricingCard = (props: PricingCardProps) => {
           ))}
         </div>
         <div className="relative box-border caret-transparent shrink-0 w-full">
-          <button
-            type="button"
-            disabled
-            className={`relative disabled:opacity-50 text-blue-700 content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif ${props.variant === "bg-white rounded-[18px]" ? "shadow-[rgba(18,109,251,0)_0px_0px_0px_0px,rgba(18,109,251,0)_0px_0px_0px_0px,rgba(18,109,251,0)_0px_0px_0px_0px]" : ""}`}
+          <a
+            href={SIGNUP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className={`relative text-blue-700 content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden px-5 py-2.5 rounded-[10px] after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:rounded-[10px] after:border-separate after:border-2 after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif ${props.variant === "bg-white rounded-[18px]" ? "shadow-[rgba(18,109,251,0)_0px_0px_0px_0px,rgba(18,109,251,0)_0px_0px_0px_0px,rgba(18,109,251,0)_0px_0px_0px_0px]" : ""}`}
           >
             <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex blur-0 shrink-0 h-min justify-center gap-y-2.5 w-min">
               <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
@@ -93,7 +95,7 @@ export const PricingCard = (props: PricingCardProps) => {
                 </p>
               </div>
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </div>
