@@ -4,6 +4,7 @@ import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsOfService } from "@/pages/TermsOfService";
 import { Blog } from "@/pages/Blog";
 import { Contact } from "@/pages/Contact";
+import { UseCase } from "@/pages/UseCase";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Features } from "@/sections/Features";
@@ -145,6 +146,7 @@ export const App = () => {
       <Route path="/terms" element={<TermsOfService />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/use-cases/:useCase" element={<UseCase />} />
     </Routes>
   );
 };

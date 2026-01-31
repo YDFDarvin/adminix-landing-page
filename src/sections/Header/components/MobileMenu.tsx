@@ -62,6 +62,29 @@ export const MobileMenu = () => {
             >
               Integrations
             </Link>
+            <div className="pt-2">
+              <p className="text-xs uppercase tracking-[0.24em] text-zinc-500 font-geist px-4">
+                Use Cases
+              </p>
+              <div className="mt-2 flex flex-col gap-1">
+                {[
+                  { label: "Insurance", href: "/use-cases/insurance" },
+                  { label: "Healthcare", href: "/use-cases/healthcare" },
+                  { label: "HR", href: "/use-cases/hr" },
+                  { label: "Real Estate", href: "/use-cases/real-estate" },
+                  { label: "E-commerce", href: "/use-cases/e-commerce" },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <Link
               to="/#pricing"
               className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"

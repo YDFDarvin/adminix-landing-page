@@ -13,7 +13,7 @@ export type PricingCardProps = {
 export const PricingCard = (props: PricingCardProps) => {
   return (
     <div
-      className={`relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full p-4 ${props.variant || ""}`}
+      className={`relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col flex-1 shrink-0 h-full justify-center gap-y-5 w-full p-4 ${props.variant || ""}`}
     >
       <div className="relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full overflow-hidden">
         <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
@@ -50,7 +50,7 @@ export const PricingCard = (props: PricingCardProps) => {
         </div>
       </div>
       <div
-        className={`relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col shrink-0 h-min justify-center gap-y-4 w-full ${props.variant === "bg-white rounded-[18px]" ? "order-1" : ""}`}
+        className={`relative content-start items-start box-border caret-transparent gap-x-4 flex flex-col flex-1 justify-between gap-y-4 w-full ${props.variant === "bg-white rounded-[18px]" ? "order-1" : ""}`}
       >
         <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
           <p className="text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">

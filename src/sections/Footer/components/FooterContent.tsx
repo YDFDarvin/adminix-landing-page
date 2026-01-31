@@ -35,6 +35,16 @@ export const FooterContent = () => {
           ]}
         />
         <FooterLinks
+          title="Use Cases"
+          links={[
+            { text: "Insurance", href: "/use-cases/insurance" },
+            { text: "Healthcare", href: "/use-cases/healthcare" },
+            { text: "HR", href: "/use-cases/hr" },
+            { text: "Real Estate", href: "/use-cases/real-estate" },
+            { text: "E-commerce", href: "/use-cases/e-commerce" },
+          ]}
+        />
+        <FooterLinks
           title="Resources"
           links={[
             { text: "Facebook", href: "https://www.facebook.com/adminixio" },
