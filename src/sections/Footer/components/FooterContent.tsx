@@ -34,16 +34,30 @@ export const FooterContent = () => {
             { text: "FAQ", href: "/#faq" },
           ]}
         />
-        <FooterLinks
-          title="Use Cases"
-          links={[
-            { text: "Insurance", href: "/use-cases/insurance" },
-            { text: "Healthcare", href: "/use-cases/healthcare" },
-            { text: "HR", href: "/use-cases/hr" },
-            { text: "Real Estate", href: "/use-cases/real-estate" },
-            { text: "E-commerce", href: "/use-cases/e-commerce" },
-          ]}
-        />
+        <div className="hidden md:flex md:w-px md:basis-0 md:grow">
+          <FooterLinks
+            title="Use Cases"
+            links={[
+              { text: "Insurance", href: "/use-cases/insurance" },
+              { text: "Healthcare", href: "/use-cases/healthcare" },
+              { text: "HR", href: "/use-cases/hr" },
+              { text: "Real Estate", href: "/use-cases/real-estate" },
+              { text: "E-commerce", href: "/use-cases/e-commerce" },
+            ]}
+          />
+        </div>
+        <div className="md:hidden">
+          <FooterLinks
+            title="Use Cases"
+            links={[
+              { text: "Insurance", href: "/use-cases/insurance" },
+              { text: "Healthcare", href: "/use-cases/healthcare" },
+              { text: "HR", href: "/use-cases/hr" },
+              { text: "Real Estate", href: "/use-cases/real-estate" },
+              { text: "E-commerce", href: "/use-cases/e-commerce" },
+            ]}
+          />
+        </div>
         <FooterLinks
           title="Resources"
           links={[

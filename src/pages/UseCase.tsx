@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
 
-const useCaseContent = {
+export const useCaseContent = {
   insurance: {
     title: "Insurance",
     description:
@@ -32,14 +32,12 @@ const useCaseContent = {
 
 type UseCaseKey = keyof typeof useCaseContent;
 
-export const UseCase = () => {
-  const { useCase } = useParams();
-  const content = useCase ? useCaseContent[useCase as UseCaseKey] : undefined;
-  const title = content?.title ?? "Use Case";
-  const description =
-    content?.description ??
-    "See how Adminix helps teams standardize requests, reduce manual work, and deliver faster outcomes.";
+type UseCasePageProps = {
+  title: string;
+  description: string;
+};
 
+export const UseCasePage = ({ title, description }: UseCasePageProps) => {
   return (
     <div className="text-black text-xs not-italic normal-nums font-normal accent-auto bg-neutral-100 box-border caret-transparent block tracking-[normal] leading-[normal] list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible border-separate font-sans_serif min-h-screen">
       <div className="relative flex min-h-screen flex-col bg-neutral-100">
@@ -61,4 +59,15 @@ export const UseCase = () => {
       </div>
     </div>
   );
+};
+
+export const UseCase = () => {
+  const { useCase } = useParams();
+  const content = useCase ? useCaseContent[useCase as UseCaseKey] : undefined;
+  const title = content?.title ?? "Use Case";
+  const description =
+    content?.description ??
+    "See how Adminix helps teams standardize requests, reduce manual work, and deliver faster outcomes.";
+
+  return <UseCasePage title={title} description={description} />;
 };
