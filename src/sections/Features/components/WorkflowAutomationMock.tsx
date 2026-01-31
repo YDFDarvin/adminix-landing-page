@@ -19,7 +19,7 @@ export const WorkflowAutomationMock = () => {
         <div className="hidden w-[48%] flex-col bg-[#0b101a] sm:flex">
           <div className="border-b border-white/10 px-2 py-2">
             <div className="grid w-full grid-cols-2 items-center gap-1 rounded-[12px] border border-white/10 bg-[#121826] p-1 text-[9px] font-semibold text-slate-300 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.2)]">
-              <div className="flex min-h-[34px] items-center justify-center gap-1 rounded-[10px] bg-blue-500 px-2 py-1.5 text-white leading-none shadow-[0_8px_18px_rgba(59,130,246,0.3)]">
+              <div className="flex min-h-[34px] items-center justify-center gap-1 rounded-[10px] bg-gradient-to-br from-blue-500 via-blue-500 to-blue-600 px-2 py-1.5 text-white leading-none shadow-[0_8px_18px_rgba(59,130,246,0.3)]">
                 <span className="flex shrink-0 items-center justify-center">
                   <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" aria-hidden="true">
                     <circle cx="8" cy="8" r="2.2" fill="#ffffff" />
@@ -67,7 +67,7 @@ export const WorkflowAutomationMock = () => {
               ].map(({ label, Icon }) => (
                 <div
                   key={label}
-                  className="flex items-center justify-between rounded-[10px] border border-blue-400/40 bg-blue-500/90 px-2.5 py-2 text-[9px] font-semibold text-white shadow-[0_10px_18px_rgba(37,99,235,0.25)]"
+                  className="flex items-center justify-between rounded-[10px] border border-blue-400/40 bg-gradient-to-br from-blue-500/95 via-blue-500/95 to-blue-600/95 px-2.5 py-2 text-[9px] font-semibold text-white shadow-[0_10px_18px_rgba(37,99,235,0.25)]"
                 >
                   <div className="flex items-center gap-2">
                     <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/15 text-[10px]">
@@ -106,15 +106,15 @@ export const WorkflowAutomationMock = () => {
           </div>
           <div className="relative flex-1">
             <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(148,163,184,0.08)_1px,_transparent_1px),_linear-gradient(0deg,_rgba(148,163,184,0.08)_1px,_transparent_1px)] bg-[size:18px_18px] bg-[position:9px_9px]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 py-6">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 py-6 scale-[0.9] origin-center sm:scale-100">
               <div
                 className="relative w-[72%] aspect-[3/2] overflow-visible rounded-[12px] border border-[#1E293B] bg-[#121926] px-4 py-3 shadow-[0_14px_30px_rgba(15,23,42,0.5)]"
                 style={{ animation: "nodeHover 10s ease-in-out infinite" }}
               >
                 <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#22C55E]" />
                 <div className="flex items-center gap-3 pt-2">
-                  <span className="flex h-[44px] w-[44px] items-center justify-center rounded-[8px] bg-[#10B981] text-white">
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+                  <span className="flex h-[31px] w-[31px] min-w-[31px] items-center justify-center rounded-[8px] bg-gradient-to-br from-[#10B981] via-[#10B981] to-[#0c8e62] text-white aspect-square">
+                    <svg viewBox="0 0 24 24" className="h-[15px] w-[15px]" aria-hidden="true">
                       <path
                         d="M13 3 4 14h7l-1 7 9-11h-7l1-7Z"
                         fill="currentColor"
@@ -143,8 +143,8 @@ export const WorkflowAutomationMock = () => {
               >
                 <div className="absolute left-0 top-0 h-[4px] w-full rounded-t-[12px] bg-[#3B82F6]" />
                 <div className="flex items-center gap-3 pt-2">
-                  <span className="flex h-[44px] w-[44px] items-center justify-center rounded-[8px] bg-[#3B82F6] text-white">
-                    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+                  <span className="flex h-[31px] w-[31px] min-w-[31px] items-center justify-center rounded-[8px] bg-gradient-to-br from-[#3B82F6] via-[#3B82F6] to-[#2a63d9] text-white aspect-square">
+                    <svg viewBox="0 0 24 24" className="h-[15px] w-[15px]" aria-hidden="true">
                       <ellipse cx="12" cy="6" rx="6.5" ry="3" fill="currentColor" />
                       <path
                         d="M5.5 6v6c0 1.7 2.9 3 6.5 3s6.5-1.3 6.5-3V6"

@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Collapse } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { CTAButton } from "@/components/CTAButton";
 
 export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
   const { pathname } = useLocation();
   const handleNavClick = (id: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     setIsOpen(false);
+    setIsUseCasesOpen(false);
     const target = document.getElementById(id);
     if (pathname === "/" && target) {
       event.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+  const handleUseCasesToggle = () => {
+    setIsUseCasesOpen((prev) => !prev);
   };
 
   return (
@@ -63,27 +70,42 @@ export const MobileMenu = () => {
               Integrations
             </Link>
             <div className="pt-2">
-              <p className="text-xs uppercase tracking-[0.24em] text-zinc-500 font-geist px-4">
-                Use Cases
-              </p>
-              <div className="mt-2 flex flex-col gap-1">
-                {[
-                  { label: "Insurance", href: "/use-cases/insurance" },
-                  { label: "Healthcare", href: "/use-cases/healthcare" },
-                  { label: "HR", href: "/use-cases/hr" },
-                  { label: "Real Estate", href: "/use-cases/real-estate" },
-                  { label: "E-commerce", href: "/use-cases/e-commerce" },
-                ].map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className="text-zinc-600/80 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+              <button
+                type="button"
+                onClick={handleUseCasesToggle}
+                className="w-full flex items-center justify-between text-zinc-700/90 text-lg font-medium py-3 px-4 hover:bg-neutral-100 rounded-lg"
+                aria-expanded={isUseCasesOpen}
+                aria-controls="mobile-use-cases"
+              >
+                <span>Use Cases</span>
+                <KeyboardArrowDownIcon
+                  fontSize="small"
+                  className={`transition-transform duration-200 ${isUseCasesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              <Collapse in={isUseCasesOpen} timeout={200}>
+                <div id="mobile-use-cases" className="mt-1 flex flex-col gap-1 pl-4">
+                  {[
+                    { label: "Insurance", href: "/use-cases/insurance" },
+                    { label: "Healthcare", href: "/use-cases/healthcare" },
+                    { label: "HR", href: "/use-cases/hr" },
+                    { label: "Real Estate", href: "/use-cases/real-estate" },
+                    { label: "E-commerce", href: "/use-cases/e-commerce" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="text-zinc-600/80 text-base font-medium py-2.5 px-4 hover:bg-neutral-100 rounded-lg"
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsUseCasesOpen(false);
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </Collapse>
             </div>
             <Link
               to="/#pricing"

@@ -70,7 +70,9 @@ export const NavMenu = () => {
           aria-expanded={isUseCaseOpen ? "true" : undefined}
           onClick={handleUseCaseOpen}
           disableRipple
+          disableFocusRipple
           endIcon={<KeyboardArrowDownIcon fontSize="small" />}
+          className="relative text-blue-700 content-center items-center box-border caret-transparent gap-x-2.5 flex h-10 justify-center gap-y-2.5 w-min px-3 py-2.5 rounded-lg"
           sx={{
             color: "rgba(82, 82, 91, 0.8)",
             textTransform: "none",
@@ -79,10 +81,20 @@ export const NavMenu = () => {
             fontWeight: 500,
             letterSpacing: "-0.32px",
             lineHeight: "22.4px",
-            padding: "10px 12px",
+            padding: 0,
             minWidth: "auto",
+            minHeight: "40px",
+            height: "40px",
+            boxSizing: "border-box",
             borderRadius: "8px",
+            "& .MuiButton-endIcon": {
+              marginLeft: "6px",
+              marginRight: 0,
+            },
             "&:hover": {
+              backgroundColor: "rgba(0, 0, 0, 0.04)",
+            },
+            "&.Mui-focusVisible": {
               backgroundColor: "rgba(0, 0, 0, 0.04)",
             },
           }}
