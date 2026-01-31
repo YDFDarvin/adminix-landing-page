@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const CTAButton = () => {
+  const { pathname } = useLocation();
+  if (pathname === "/contact") {
+    return null;
+  }
+
   return (
     <Link
       to="/contact"

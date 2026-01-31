@@ -6,6 +6,27 @@ export const Contact = () => {
   const textFieldSx = {
     "& .MuiOutlinedInput-root": {
       borderRadius: "12px",
+      "& fieldset": {
+        borderColor: "rgba(161, 161, 170, 0.8)",
+      },
+      "&:hover fieldset": {
+        borderColor: "rgba(161, 161, 170, 0.85)",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "rgba(161, 161, 170, 0.85)",
+      },
+    },
+    "& .MuiInputBase-input": {
+      fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif",
+      fontSize: "1.1667rem",
+      fontWeight: 500,
+      letterSpacing: "-0.32px",
+    },
+    "& .MuiInputLabel-root": {
+      fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif",
+      fontSize: "1.03125rem",
+      fontWeight: 500,
+      letterSpacing: "-0.28px",
     },
   };
 
@@ -57,13 +78,17 @@ export const Contact = () => {
                   <Button
                     type="submit"
                     variant="contained"
-                    disabled
                     sx={{
                       textTransform: "none",
-                      borderRadius: "12px",
+                      borderRadius: "10px",
                       padding: "10px 20px",
                       backgroundColor: "#2563eb",
                       boxShadow: "none",
+                      fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif",
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      letterSpacing: "-0.32px",
+                      lineHeight: "22.4px",
                       "&:hover": {
                         backgroundColor: "#1d4ed8",
                         boxShadow: "none",
