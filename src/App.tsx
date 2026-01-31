@@ -4,7 +4,16 @@ import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
 import { TermsOfService } from "@/pages/TermsOfService";
 import { Blog } from "@/pages/Blog";
 import { Contact } from "@/pages/Contact";
-import { UseCase, UseCasePage, useCaseContent } from "@/pages/UseCase";
+import {
+  HealthcareUseCase,
+  HRUseCase,
+  InsuranceUseCase,
+  EcommerceUseCase,
+  RealEstateUseCase,
+  UseCase,
+  UseCasePage,
+  useCaseContent,
+} from "@/pages/UseCase";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
 import { Features } from "@/sections/Features";
@@ -148,23 +157,23 @@ export const App = () => {
       <Route path="/contact" element={<Contact />} />
       <Route
         path="/use-cases/insurance"
-        element={<UseCasePage {...useCaseContent.insurance} />}
+        element={<InsuranceUseCase />}
       />
       <Route
         path="/use-cases/healthcare"
-        element={<UseCasePage {...useCaseContent.healthcare} />}
+        element={<HealthcareUseCase />}
       />
       <Route
         path="/use-cases/hr"
-        element={<UseCasePage {...useCaseContent.hr} />}
+        element={<HRUseCase />}
       />
       <Route
         path="/use-cases/real-estate"
-        element={<UseCasePage {...useCaseContent["real-estate"]} />}
+        element={<RealEstateUseCase />}
       />
       <Route
         path="/use-cases/e-commerce"
-        element={<UseCasePage {...useCaseContent["e-commerce"]} />}
+        element={<EcommerceUseCase />}
       />
       <Route path="/use-cases/:useCase" element={<UseCase />} />
     </Routes>

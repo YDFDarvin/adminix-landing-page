@@ -74,6 +74,21 @@ export const FooterContent = () => {
           ]}
         />
       </div>
+      <div className="flex w-full items-center justify-start order-3 pt-2 md:order-3 md:pt-0 lg:order-3 lg:w-auto lg:justify-end lg:ml-8">
+        <a
+          href="https://www.goodfirms.co/software/adminix"
+          target="_blank"
+          rel="noreferrer"
+          data-turbo="false"
+          className="inline-flex"
+        >
+          <img
+            src="https://assets.goodfirms.co/badges/blue-button/view-profile.svg"
+            alt="GoodFirms Badge"
+            className="w-[140px]"
+          />
+        </a>
+      </div>
     </div>
   );
 };
