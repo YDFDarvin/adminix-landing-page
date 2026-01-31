@@ -79,7 +79,7 @@ export const StepCard = (props: StepCardProps) => {
               <div className="mt-1 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                 <span>Fields</span>
                 <span className="rounded-md bg-blue-600 px-2 py-1 text-[9px] font-semibold uppercase text-white">
-                  + Add
+                  +
                 </span>
               </div>
               <div className="flex flex-col gap-2">
