@@ -5,13 +5,13 @@ import { CTAButton } from "@/components/CTAButton";
 export const FooterContent = () => {
   return (
     <div className="relative content-start items-start box-border caret-transparent flex flex-col shrink-0 h-min justify-between gap-y-10 w-full lg:flex-row">
-      <div className="relative content-start items-start box-border caret-transparent gap-x-5 flex flex-col basis-auto grow-0 shrink-0 h-min justify-center w-full gap-y-5 order-2 lg:order-1 lg:basis-0 lg:grow lg:w-px">
+      <div className="relative content-start items-start box-border caret-transparent gap-x-5 flex flex-col basis-auto grow-0 shrink-0 h-min justify-center w-full gap-y-5 order-2 lg:order-1 lg:w-[230px]">
         <FooterBrand />
         <div className="relative box-border caret-transparent shrink-0">
           <CTAButton />
         </div>
       </div>
-      <div className="relative content-start items-start box-border caret-transparent gap-x-5 flex flex-col basis-auto grow-0 shrink-0 h-min justify-center w-full gap-y-5 order-1 md:flex-row lg:order-2 lg:basis-0 lg:grow lg:max-w-[500px] lg:w-px">
+      <div className="relative content-start items-start box-border caret-transparent gap-x-5 flex flex-col basis-auto grow-0 shrink-0 h-min justify-center w-full gap-y-5 order-1 md:flex-row lg:order-2 lg:basis-0 lg:grow lg:max-w-[640px] lg:w-px">
         <FooterLinks
           title="Product"
           links={[
@@ -74,7 +74,7 @@ export const FooterContent = () => {
           ]}
         />
       </div>
-      <div className="flex w-full items-center justify-start order-3 pt-2 md:order-3 md:pt-0 lg:order-3 lg:w-auto lg:justify-end lg:ml-8">
+      <div className="flex w-full items-center justify-start order-3 pt-2 md:order-3 md:pt-0 lg:order-3 lg:w-auto lg:justify-end lg:ml-6">
         <a
           href="https://www.goodfirms.co/software/adminix"
           target="_blank"

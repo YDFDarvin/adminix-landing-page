@@ -43,13 +43,13 @@ export const FooterLinks = (props: FooterLinksProps) => {
         {props.links.map((link, index) => (
           <div
             key={index}
-            className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"
+            className="relative box-border caret-transparent flex flex-col shrink-0 justify-start"
           >
-            <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] text-nowrap font-geist">
+            <p className="text-zinc-600/80 text-base font-medium box-border caret-transparent tracking-[-0.32px] leading-[22.4px] font-geist">
               {isExternalLink(link.href) ? (
                 <a
                   href={link.href}
-                  className="box-border caret-transparent text-nowrap"
+                  className="box-border caret-transparent"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -58,13 +58,13 @@ export const FooterLinks = (props: FooterLinksProps) => {
               ) : isHashLink(link.href) ? (
                 <Link
                   to={link.href}
-                  className="box-border caret-transparent text-nowrap"
+                  className="box-border caret-transparent"
                   onClick={handleLinkClick(link.href)}
                 >
                   {link.text}
                 </Link>
               ) : (
-                <Link to={link.href} className="box-border caret-transparent text-nowrap">
+                <Link to={link.href} className="box-border caret-transparent">
                   {link.text}
                 </Link>
               )}
