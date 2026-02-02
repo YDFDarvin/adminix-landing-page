@@ -593,7 +593,7 @@
     opacity: 0;
     transform: translateY(24px);
     filter: blur(2px);
-    transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+    transition: opacity 300ms ease, transform 300ms ease, filter 300ms ease;
     will-change: opacity, transform, filter;
   }
 
