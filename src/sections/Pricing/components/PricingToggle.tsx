@@ -39,7 +39,7 @@ export const PricingToggle = () => {
     <div className="relative content-center items-center box-border caret-transparent gap-x-10 flex flex-col h-min justify-center gap-y-10 w-full">
       <div className="relative box-border caret-transparent shrink-0">
         <div className="relative content-center items-center box-border caret-transparent gap-x-6 flex flex-col h-min justify-center gap-y-6 w-min">
-          <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex shrink-0 h-min justify-center gap-y-4 w-min px-1 overflow-clip">
+          <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex shrink-0 h-min justify-center gap-y-4 w-min px-1">
             <div
               className={`relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap transition-colors duration-300 ${
                 isYearly ? "text-zinc-400" : "text-black"
@@ -57,12 +57,12 @@ export const PricingToggle = () => {
                   setPrevPrices(displayPrices);
                   setIsYearly(!isYearly);
                 }}
-                className={`relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-12 justify-center gap-y-2.5 w-[90px] overflow-clip rounded-[40px] transition-all duration-300 ${
+                className={`relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-12 justify-center gap-y-2.5 w-[90px] rounded-[40px] transition-all duration-300 ${
                   isYearly ? "bg-blue-600" : "bg-neutral-200"
                 } after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[40px] after:border-separate after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif`}
               >
                 <div
-                  className={`absolute bg-white box-border caret-transparent shrink-0 w-10 z-[1] overflow-clip rounded-[30px] inset-y-1 left-1 transition-transform duration-300 ${
+                  className={`absolute bg-white box-border caret-transparent shrink-0 w-10 z-[1] rounded-[30px] inset-y-1 left-1 transition-transform duration-300 ${
                     isYearly ? "translate-x-[42px]" : "translate-x-0"
                   }`}
                 ></div>
@@ -88,7 +88,7 @@ export const PricingToggle = () => {
                 Save
               </p>
             </div>
-            <div className="relative content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-clip px-2 py-1 rounded-[50px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[50px] after:border-separate after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif">
+            <div className="relative content-center items-center bg-blue-600 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min px-2 py-1 rounded-[50px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[50px] after:border-separate after:border-solid after:border-white/20 after:left-0 after:top-0 after:font-sans_serif">
               <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">
                 <p className="text-white text-sm font-medium box-border caret-transparent tracking-[-0.28px] leading-[18.2px] text-nowrap font-geist">
                   15%

@@ -57,6 +57,11 @@ const HomePage = () => {
       return;
     }
 
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      sections.forEach((section) => section.classList.add("reveal-visible"));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
